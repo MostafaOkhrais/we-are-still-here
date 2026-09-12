@@ -1,0 +1,56 @@
+# We Are Still Here | باقون — Apache / LiteSpeed (Hostinger) configuration.
+# Mirrors vercel.json behavior for non-Vercel hosting.
+
+RewriteEngine On
+
+Options -Indexes
+
+# Contact-page CSP variant (must precede internal rewrites: env survives, URI does not)
+RewriteCond %{REQUEST_URI} ^/contact/?$ [NC]
+RewriteRule ^ - [E=CONTACTPAGE:1]
+
+# --- 1) Never serve internal files ---
+<Files "vercel.json">
+  Require all denied
+</Files>
+<FilesMatch "\.md$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/supabase/.*
+# Serve only minified JS (hide readable sources)
+RedirectMatch 404 ^/js/.+(?<!\.min)\.js$
+
+# --- 2) Clean URLs: browser .html -> clean (permanent) ---
+RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+RewriteCond %{THE_REQUEST} \.html[\s?] [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# --- 3) Same-origin API proxy (PHP keeps the upstream host secret) ---
+RewriteRule ^api/(.*)$ api.php?__route=$1 [L,QSA]
+
+# --- 4) Clean URLs: internal clean -> file ---
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([\w-]+)/?$ $1.html [L]
+
+# --- 5) Security headers (mirrors _headers / vercel.json) ---
+<IfModule mod_headers.c>
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-bdt6o7IO96B5ip+AZHkU6QpCUYbY0zBpDQq+qLUFFr0='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'" env=CONTACTPAGE
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-bdt6o7IO96B5ip+AZHkU6QpCUYbY0zBpDQq+qLUFFr0='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'" env=!CONTACTPAGE
+  Header set X-Frame-Options "DENY"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+  Header set Strict-Transport-Security "max-age=86400"
+</IfModule>
+
+# --- 6) Static asset caching (conservative: filenames are not hashed) ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>

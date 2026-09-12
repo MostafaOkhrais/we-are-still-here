@@ -1,0 +1,7 @@
+*.md
+supabase/
+
+api.php
+_headers
+.htaccess
+

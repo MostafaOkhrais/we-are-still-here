@@ -1,0 +1,12 @@
+﻿
+# secrets & local only
+.env
+.env.*
+!.env.example
+api.php
+*.log
+npm-debug.log*
+node_modules/
+.vercel/
+supabase/.temp/
+

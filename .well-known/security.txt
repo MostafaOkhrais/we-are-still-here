@@ -1,0 +1,4 @@
+# We Are Still Here | Baqoun — coordinated vulnerability disclosure
+Contact: mailto:wash.team.info@gmail.com
+Preferred-Languages: ar, en
+Expires: 2027-09-10T00:00:00.000Z

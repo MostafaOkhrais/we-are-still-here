@@ -1,0 +1,114 @@
+/* Public news page: reads PUBLISHED posts only (anon RLS policy enforces this).
+   No innerHTML anywhere — all rendering via DOM. */
+(function(){
+  'use strict';
+  function lang(){ return document.documentElement.lang === 'en' ? 'en' : 'ar'; }
+  var CAT = {
+    news: {ar: 'خبر', en: 'News'},
+    update: {ar: 'تطور', en: 'Update'},
+    event: {ar: 'فعالية', en: 'Event'}
+  };
+  var T = {
+    fail: {ar: 'تعذّر تحميل الأخبار. حاول مجددًا لاحقًا.', en: 'Could not load news. Please try again later.'},
+    upcoming: {ar: 'قادمة', en: 'Upcoming'},
+    ended: {ar: 'انتهت', en: 'Past'},
+    published: {ar: 'نُشر بتاريخ', en: 'Published'},
+    eventDate: {ar: 'الموعد', en: 'Date'},
+    location: {ar: 'المكان', en: 'Location'}
+  };
+  function t(k){ return T[k][lang()]; }
+  function catLabel(c){ return (CAT[c] || {ar: c, en: c})[lang()]; }
+
+  var cache = [];
+  var filter = 'all';
+
+  function el(tag, cls, text){
+    var n = document.createElement(tag);
+    if(cls) n.className = cls;
+    if(text != null) n.textContent = text;
+    return n;
+  }
+  function fmtDate(iso){
+    if(!iso) return '';
+    try {
+      var d = iso.length <= 10 ? new Date(iso + 'T00:00:00') : new Date(iso);
+      return d.toLocaleDateString(lang() === 'ar' ? 'ar' : 'en-GB', {dateStyle: 'medium'});
+    } catch(e){ return iso; }
+  }
+  function todayStr(){
+    var d = new Date();
+    function p(n){ return (n < 10 ? '0' : '') + n; }
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+  }
+
+  function card(p){
+    var l = lang();
+    var c = el('div', 'card');
+    var badge = el('span', 'badge cat-' + p.category, catLabel(p.category));
+    c.appendChild(badge);
+    c.appendChild(el('h3', null, l === 'ar' ? p.title_ar : p.title_en));
+    var meta = el('p', 'news-meta', t('published') + ': ' + fmtDate(p.published_at || p.created_at));
+    c.appendChild(meta);
+    if(p.category === 'event' && p.event_date){
+      var box = el('div', 'event-box');
+      box.appendChild(el('span', null, t('eventDate') + ': ' + fmtDate(p.event_date)));
+      if(p.location) box.appendChild(el('span', null, t('location') + ': ' + p.location));
+      var coming = p.event_date >= todayStr();
+      box.appendChild(el('span', 'badge ' + (coming ? 'active' : 'archived'), coming ? t('upcoming') : t('ended')));
+      c.appendChild(box);
+    } else if(p.location){
+      c.appendChild(el('p', 'news-meta', t('location') + ': ' + p.location));
+    }
+    c.appendChild(el('p', 'news-body', l === 'ar' ? p.body_ar : p.body_en));
+    return c;
+  }
+
+  function render(){
+    var list = document.getElementById('news-list');
+    var empty = document.getElementById('news-empty');
+    if(!list || !empty) return;
+    list.textContent = '';
+    var rows = cache.filter(function(p){ return filter === 'all' || p.category === filter; });
+    empty.hidden = rows.length > 0;
+    rows.forEach(function(p){ list.appendChild(card(p)); });
+  }
+
+  function fail(){
+    var empty = document.getElementById('news-empty');
+    var txt = document.getElementById('news-empty-text');
+    var list = document.getElementById('news-list');
+    if(list) list.textContent = '';
+    if(txt) txt.textContent = t('fail');
+    if(empty) empty.hidden = false;
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var B = window.WASH_BACKEND;
+    if(B && B.newsFeed){
+      B.req(B.newsFeed, {
+        headers: {'apikey': B.anonKey}
+      }).then(function(r){
+        if(!r.ok) throw new Error('api');
+        return r.json();
+      }).then(function(rows){
+        cache = Array.isArray(rows) ? rows : [];
+        render();
+      }).catch(fail);
+    } else {
+      fail();
+    }
+    document.querySelectorAll('.tab[data-filter]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.tab[data-filter]').forEach(function(b){
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        render();
+      });
+    });
+    /* Re-render translated content after main.js switches language. */
+    document.querySelectorAll('.lang-toggle').forEach(function(b){
+      b.addEventListener('click', function(){ render(); });
+    });
+  });
+})();
