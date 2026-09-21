@@ -18,3 +18,7 @@ Thumbs.db
 coverage/
 dist/
 
+
+# docs - keep repo clean (allow README)
+*.md
+!README.md
