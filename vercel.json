@@ -9,8 +9,11 @@
     { "source": "/api/contact", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/functions/v1/submit-contact" },
     { "source": "/api/newsletter", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/functions/v1/subscribe-newsletter" },
     { "source": "/api/news", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/rest/v1/news_posts?select=id,title_ar,title_en,body_ar,body_en,category,event_date,location,published_at,created_at&published=eq.true&order=published_at.desc.nullslast&order=created_at.desc&limit=50" },
-    { "source": "/api/auth/:path*", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/auth/v1/:path*" },
-    { "source": "/api/rest/:path*", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/rest/v1/:path*" }
+    { "source": "/api/auth/token", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/auth/v1/token" },
+    { "source": "/api/auth/logout", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/auth/v1/logout" },
+    { "source": "/api/rest/contact_messages", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/rest/v1/contact_messages" },
+    { "source": "/api/rest/newsletter_subscribers", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/rest/v1/newsletter_subscribers" },
+    { "source": "/api/rest/news_posts", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/rest/v1/news_posts" }
   ],
   "headers": [
     {
@@ -24,7 +27,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-bdt6o7IO96B5ip+AZHkU6QpCUYbY0zBpDQq+qLUFFr0='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self' https://dnvjfaaxfydvujkqsdfu.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline' 'sha256-bdt6o7IO96B5ip+AZHkU6QpCUYbY0zBpDQq+qLUFFr0='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://dnvjfaaxfydvujkqsdfu.supabase.co https://cdn.tailwindcss.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
         },
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
@@ -41,8 +44,15 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-bdt6o7IO96B5ip+AZHkU6QpCUYbY0zBpDQq+qLUFFr0='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self' https://dnvjfaaxfydvujkqsdfu.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline' 'sha256-bdt6o7IO96B5ip+AZHkU6QpCUYbY0zBpDQq+qLUFFr0='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://dnvjfaaxfydvujkqsdfu.supabase.co https://cdn.tailwindcss.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests"
         }
+      ]
+    },
+    {
+      "source": "/admin",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]
     }
   ]

@@ -1,12 +1,11 @@
-/* Footer newsletter forms -> subscribe-newsletter Edge Function. */
 (function(){
   function lang(){ return document.documentElement.lang === 'en' ? 'en' : 'ar'; }
   var T = {
-    sending: {ar:'جارٍ الاشتراك…', en:'Subscribing…'},
-    ok: {ar:'تم اشتراكك في النشرة البريدية. أهلًا بك!', en:'You are subscribed to the newsletter. Welcome!'},
-    bad: {ar:'يرجى إدخال بريد إلكتروني صالح.', en:'Please enter a valid email address.'},
-    rate: {ar:'محاولات كثيرة مؤخرًا — حاول مجددًا بعد ساعة.', en:'Too many attempts recently — please try again in an hour.'},
-    fail: {ar:'تعذّر الاشتراك. حاول مجددًا لاحقًا.', en:'Could not subscribe. Please try again later.'}
+    sending: {ar:'\u062c\u0627\u0631\u064d \u0627\u0644\u0627\u0634\u062a\u0631\u0627\u0643…', en:'Subscribing…'},
+    ok: {ar:'\u062a\u0645 \u0627\u0634\u062a\u0631\u0627\u0643\u0643 \u0641\u064a \u0627\u0644\u0646\u0634\u0631\u0629 \u0627\u0644\u0628\u0631\u064a\u062f\u064a\u0629. \u0623\u0647\u0644\u064b\u0627 \u0628\u0643!', en:'You are subscribed to the newsletter. Welcome!'},
+    bad: {ar:'\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0628\u0631\u064a\u062f \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0635\u0627\u0644\u062d.', en:'Please enter a valid email address.'},
+    rate: {ar:'\u0645\u062d\u0627\u0648\u0644\u0627\u062a \u0643\u062b\u064a\u0631\u0629 \u0645\u0624\u062e\u0631\u064b\u0627 — \u062d\u0627\u0648\u0644 \u0645\u062c\u062f\u062f\u064b\u0627 \u0628\u0639\u062f \u0633\u0627\u0639\u0629.', en:'Too many attempts recently — please try again in an hour.'},
+    fail: {ar:'\u062a\u0639\u0630\u0651\u0631 \u0627\u0644\u0627\u0634\u062a\u0631\u0627\u0643. \u062d\u0627\u0648\u0644 \u0645\u062c\u062f\u062f\u064b\u0627 \u0644\u0627\u062d\u0642\u064b\u0627.', en:'Could not subscribe. Please try again later.'}
   };
   function t(k){ return T[k][lang()]; }
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

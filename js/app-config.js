@@ -1,9 +1,3 @@
-/* Backend endpoints. Production traffic goes through same-origin /api/* rewrites
-   so the upstream host never appears in page source or network
-   panels; local development falls back to the direct host. The publishable key is
-   public by design — row-level security is the real protection.
-   req() adds a timeout so pages fail fast (with a friendly message) instead of
-   hanging when the network is slow or under heavy load. */
 window.WASH_BACKEND = (function(){
   var HOST = 'https://dnvjfaaxfydvujkqsdfu.supabase.co';
   var h = window.location.hostname || '';

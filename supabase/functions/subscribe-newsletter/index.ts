@@ -1,10 +1,7 @@
-// subscribe-newsletter — public signup endpoint (verify_jwt=false BY DESIGN:
-// the anon key is public, so real protection is validation + rate limit + idempotent upsert).
-// Writes go through service_role via raw PostgREST fetch (no client deps); anon has NO direct table access.
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 const EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-const RATE_LIMIT = 10; // max signups per IP per hour
+const RATE_LIMIT = 10;
 const RATE_WINDOW_MS = 60 * 60 * 1000;
 
 const SR_URL = Deno.env.get("SUPABASE_URL") ?? "";
@@ -16,12 +13,14 @@ const SR_HEADERS: Record<string, string> = {
 };
 
 function corsHeaders(req: Request): Record<string, string> {
-  const configured = (Deno.env.get("ALLOWED_ORIGINS") ?? "*")
-    .split(",").map((s) => s.trim()).filter(Boolean);
+  const raw = Deno.env.get("ALLOWED_ORIGINS") ?? "";
+  const configured = raw.split(",").map((s) => s.trim()).filter(Boolean);
   const origin = req.headers.get("origin") ?? "";
-  const allow = configured.includes("*")
-    ? "*"
-    : (configured.includes(origin) ? origin : (configured[0] ?? "null"));
+  const allow = configured.length === 0
+    ? "null"
+    : configured.includes("*")
+      ? "*"
+      : (configured.includes(origin) ? origin : (configured[0] ?? "null"));
   return {
     "Access-Control-Allow-Origin": allow,
     "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -84,10 +83,8 @@ Deno.serve(async (req: Request) => {
     if (!body || typeof body !== "object") return json({ error: "bad_request" }, 400, req);
     const b = body as Record<string, unknown>;
 
-    // Honeypot: bots fill it -> pretend success, store nothing.
     if (String(b.website ?? "").trim() !== "") return json({ ok: true }, 200, req);
 
-    // Reject oversized payloads instead of silently truncating (bandwidth-abuse guard).
     if (String(b.email ?? "").length > 320 || String(b.name ?? "").length > 200) {
       return json({ error: "too_large" }, 413, req);
     }
@@ -99,8 +96,6 @@ Deno.serve(async (req: Request) => {
 
     if (!EMAIL_RE.test(email)) return json({ error: "invalid_email" }, 400, req);
 
-    // IP resolution: trusted proxy headers (shared secret, Hostinger) else
-    // gateway-observed rightmost XFF entry (left entries are user-spoofable).
     const fwd = (req.headers.get("x-forwarded-for") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     let ip = fwd.length ? fwd[fwd.length - 1] : "";
     const proxySecret = req.headers.get("x-proxy-secret") ?? "";
@@ -122,14 +117,13 @@ Deno.serve(async (req: Request) => {
       if (total >= RATE_LIMIT) return json({ error: "rate_limited" }, 429, req);
     }
 
-    // Idempotent upsert on normalized email (case-insensitive unique index).
     const { data } = await dbGet<Array<{ id: string; status: string }>>(
       `newsletter_subscribers?select=id,status&email_norm=eq.${encodeURIComponent(email)}&limit=1`,
     );
     const existing = data?.[0] ?? null;
 
     if (existing) {
-      // Uniform response: never reveal whether an address was already subscribed (anti-enumeration).
+
       if (existing.status === "active") return json({ ok: true }, 200, req);
       await dbWrite("PATCH", `newsletter_subscribers?id=eq.${existing.id}`, {
         status: "active", unsubscribed_at: null, name, lang,

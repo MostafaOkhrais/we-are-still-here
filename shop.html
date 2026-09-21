@@ -3,57 +3,159 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>المتجر | Shop — باقون We Are Still Here</title>
-<meta name="description" content="منتجات Teemill، الكتابان الصادران عن Daraja Press، ورابط التبرع عبر Chuffed. / Teemill merchandise, the two Daraja Press books, and the Chuffed donation link.">
+<meta name="description" content="منتجات Teemill، الكتابان الصادران عن Daraja Press، ورابط التبرع عبر Chuffed.">
 <meta property="og:title" content="Shop — We Are Still Here | باقون"><meta property="og:type" content="website"><meta property="og:image" content="assets/logo.png">
 <link rel="icon" href="assets/logo.png" type="image/png">
 <meta property="og:site_name" content="We Are Still Here | باقون">
-<meta property="og:locale" content="ar_AR">
-<meta property="og:locale:alternate" content="en_US">
-<meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#3A4D2A">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"We Are Still Here | Baqoun","alternateName":"باقون","description":"A Palestinian student-led initiative supporting and empowering Gaza's university students.","sameAs":["https://www.facebook.com/share/1C4kzyoLcq/?mibextid=wwXIfr","https://www.instagram.com/we.are.still.here","https://chuffed.org/project/we-are-still-here","https://we-are-still-here-students.teemill.com/"]}</script>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bdt6o7IO96B5ip+AZHkU6QpCUYbY0zBpDQq+qLUFFr0='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
-<meta http-equiv="X-Frame-Options" content="DENY">
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<script src="https://cdn.tailwindcss.com/3.4.10"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        olive: { DEFAULT: '#3A4D2A', dark: '#2D3D1F', light: '#4A5D3A', soft: '#E8EDE0', muted: '#F0F3EC' },
+        cream: { DEFAULT: '#FAF9F6', dark: '#F5F1EB', line: '#E8E0D0' },
+        gold: { DEFAULT: '#C9B48A', dark: '#A68F5E', deep: '#6B5A2E', light: '#F5ECD6' },
+        ink: { DEFAULT: '#1E1E1E', muted: '#5C5C5C', light: '#8A8A8A' }
+      },
+            fontFamily:{thmanyah:['Thmanyah Sans','sans-serif'],display:['Thmanyah Serif Display','serif'],text:['Thmanyah Serif Text','serif'],inter:['Inter','sans-serif']},
+      borderRadius: { '4xl': '2rem' },
+      boxShadow: {
+        'soft': '0 2px 20px rgba(58,77,42,0.06)',
+        'card': '0 8px 30px rgba(58,77,42,0.08)',
+        'lift': '0 20px 40px rgba(58,77,42,0.12)',
+      }
+    }
+  }
+}
+</script>
+<style>* { font-family: 'Thmanyah Sans', sans-serif; }html[lang="en"] * { font-family: 'Inter', sans-serif; }html{scroll-behavior:smooth}.glass{backdrop-filter:blur(16px)}.reveal{opacity:1;transform:none}.js-enabled .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}.js-enabled .reveal.visible{opacity:1;transform:none}.scroll-progress{position:fixed;top:0;inset-inline-start:0;width:100%;height:3px;z-index:60;pointer-events:none;background:linear-gradient(90deg,#3A4D2A,#C9B48A);transform:scaleX(0);transform-origin:right center}html[dir="ltr"] .scroll-progress{transform-origin:left center}.to-top { position: fixed; bottom: 24px; inset-inline-end: 24px; z-index: 60; width: 52px; height: 52px; border-radius: 9999px; background: linear-gradient(135deg, #3A4D2A 0%, #4A5D3A 100%); border: 1px solid rgba(255,255,255,0.12); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(58,77,42,0.28), 0 2px 8px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transform: translateY(12px) scale(0.95); transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+.to-top:hover { background: linear-gradient(135deg, #2D3D1F 0%, #3A4D2A 100%); transform: translateY(-2px) scale(1.05); box-shadow: 0 12px 32px rgba(58,77,42,0.35), 0 4px 12px rgba(0,0,0,0.15); }
+.to-top:active { transform: translateY(0) scale(0.98); }
+.to-top svg { width: 20px; height: 20px; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2)); }
+.to-top:hover svg { transform: translateY(-3px); }
+.to-top::after { content: ""; position: absolute; inset: -1px; border-radius: 9999px; background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(201,180,138,0.25)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; padding: 1px; pointer-events: none; }
+.to-top .progress-ring { position: absolute; inset: -2px; width: calc(100% + 4px); height: calc(100% + 4px); transform: rotate(-90deg); pointer-events: none; }
+.to-top .progress-ring circle { fill: none; stroke: rgba(201,180,138,0.35); stroke-width: 2; stroke-linecap: round; transition: stroke-dashoffset 0.1s linear; }.hp{position:absolute;inset-inline-start:-9999px;width:1px;height:1px;overflow:hidden}.keffiyeh{background-image:repeating-linear-gradient(0deg,transparent 0 14px,rgba(58,77,42,0.04) 14px 15px),repeating-linear-gradient(90deg,transparent 0 14px,rgba(58,77,42,0.04) 14px 15px)}</style>
 </head>
-<body>
-<a class="skip" href="#main" data-ar="تخطَّ إلى المحتوى" data-en="Skip to content">تخطَّ إلى المحتوى</a>
-<header class="site-header"><div class="container nav">
-<a class="brand" href="index.html"><img src="assets/logo.png" alt="We Are Still Here logo" data-ar-alt="شعار مبادرة باقون" data-en-alt="We Are Still Here logo" width="40" height="40"><span><span data-ar="باقون | We Are Still Here" data-en="We Are Still Here | Baqoun">باقون | We Are Still Here</span><small data-ar="مبادرة طالبية فلسطينية لدعم طلبة جامعات غزة" data-en="A Palestinian student-led initiative supporting Gaza's university students">مبادرة طالبية فلسطينية</small></span></a>
-<button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="فتح القائمة" data-ar-label="فتح القائمة" data-en-label="Open menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-<nav class="nav-links" id="main-nav" aria-label="التنقل الرئيسي" data-ar-label="التنقل الرئيسي" data-en-label="Main navigation"><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="about.html" data-ar="عن المبادرة وبرامجها" data-en="About & Programs">عن المبادرة</a><a href="shop.html" class="active" aria-current="page" data-ar="المتجر" data-en="Shop">المتجر</a><a href="team.html" data-ar="الفريق" data-en="Team">الفريق</a><a href="news.html" data-ar="الأخبار" data-en="News">الأخبار</a><a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل</a><a class="btn gold nav-cta" href="https://chuffed.org/project/we-are-still-here" target="_blank" rel="noopener" data-ar="تبرع" data-en="Donate">تبرع</a><button class="lang-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to English">EN</button></nav>
-</div></header>
+<body class="bg-cream text-ink antialiased">
+<header class="site-header sticky top-0 z-40 bg-cream/80 glass border-b border-cream-line">
+  <div class="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-3 h-[64px] lg:h-[72px]">
+      <a href="index.html" class="flex items-center gap-3 flex-1 lg:flex-none min-w-0"><div class="w-10 h-10 rounded-xl bg-white border border-cream-line flex items-center justify-center overflow-hidden shadow-soft shrink-0"><img src="assets/logo.png" alt="" width="40" height="40" class="w-full h-full object-cover"></div><div class="min-w-0 leading-none"><span class="block font-extrabold text-[15px] lg:text-[16px]" data-ar="باقون | We Are Still Here" data-en="We Are Still Here | Baqoun">باقون | We Are Still Here</span><small class="block text-[11px] lg:text-xs text-ink-muted font-medium truncate" data-ar="مبادرة طلابية فلسطينية لدعم طلبة جامعات غزة" data-en="A Palestinian student-led initiative supporting Gaza's university students">مبادرة طلابية فلسطينية</small></div></a>
+      <nav class="hidden lg:flex items-center gap-1 ms-auto"><a href="index.html" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="about.html" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="عن المبادرة وبرامجها" data-en="About & Programs">عن المبادرة وبرامجها</a><a href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener" class="px-[14px] py-2 rounded-full text-sm font-bold bg-olive-soft text-olive-dark" aria-current="page" data-ar="المتجر" data-en="Shop">المتجر</a><a href="team.html" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="الفريق" data-en="Team">الفريق</a><a href="news.html" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="الأخبار" data-en="News">الأخبار</a><a href="contact.html" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="تواصل معنا" data-en="Contact">تواصل</a><a href="https://chuffed.org/project/we-are-still-here" target="_blank" rel="noopener" class="ms-2 inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-ink hover:text-ink px-5 py-2.5 rounded-full text-sm font-extrabold border border-gold-dark/20 shadow-soft transition" data-ar="تبرع" data-en="Donate">تبرع</a><button class="lang-toggle ms-2 w-11 h-10 rounded-full bg-white border border-cream-line font-extrabold text-xs" type="button" data-ar="EN" data-en="AR">EN</button></nav>
+      <div class="flex items-center gap-2 lg:hidden ms-auto"><button class="lang-toggle w-11 h-11 rounded-full bg-white border border-cream-line font-extrabold text-xs shadow-soft" type="button" data-ar="EN" data-en="AR">EN</button><button class="menu-btn w-11 h-11 rounded-xl bg-white border border-cream-line flex items-center justify-center shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive focus-visible:ring-offset-2" type="button" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div>
+    </div>
+    <div id="main-nav-mobile" class="nav-links lg:hidden hidden border-t border-cream-line py-4 space-y-1"><a href="index.html" class="flex px-4 py-3 rounded-xl hover:bg-white font-semibold" data-ar="الرئيسية" data-en="Home">الرئيسية</a><a href="about.html" class="flex px-4 py-3 rounded-xl hover:bg-white font-semibold" data-ar="عن المبادرة وبرامجها" data-en="About & Programs">عن المبادرة وبرامجها</a><a href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener" class="flex px-4 py-3 rounded-xl bg-olive-soft text-olive-dark font-bold" data-ar="المتجر" data-en="Shop">المتجر</a><a href="team.html" class="flex px-4 py-3 rounded-xl hover:bg-white font-semibold" data-ar="الفريق" data-en="Team">الفريق</a><a href="news.html" class="flex px-4 py-3 rounded-xl hover:bg-white font-semibold" data-ar="الأخبار" data-en="News">الأخبار</a><a href="contact.html" class="flex px-4 py-3 rounded-xl hover:bg-white font-semibold" data-ar="تواصل معنا" data-en="Contact">تواصل</a><a href="https://chuffed.org/project/we-are-still-here" target="_blank" rel="noopener" class="mt-3 flex justify-center gap-2 bg-gold font-extrabold py-3.5 rounded-full">تبرع</a></div>
+  </div>
+</header>
+
 <main id="main">
-<div class="hero"><div class="container">
-<span class="eyebrow" data-ar="المتجر والدعم" data-en="Shop & support">المتجر والدعم</span>
-<h1 data-ar="ادعم برامج الطلبة في غزة" data-en="Support student programs in Gaza">ادعم برامج الطلبة في غزة</h1>
-<p class="lede" data-ar="منتجات المبادرة عبر متجر Teemill، والكتابان الصادران عن Daraja Press، مع رابط تبرع مباشر عبر Chuffed." data-en="The initiative's merchandise via the Teemill store, the two books published by Daraja Press, and a direct donation link via Chuffed.">منتجات...</p>
-<div class="cta-row"><a class="btn gold" href="https://chuffed.org/project/we-are-still-here" target="_blank" rel="noopener" data-ar="تبرع عبر Chuffed" data-en="Donate via Chuffed">تبرع عبر Chuffed</a></div>
-</div></div>
-<section class="block"><div class="container">
-<div class="note" data-ar="ملاحظة: يوجَّه ريع المنتجات والتبرعات لدعم برامج الطلبة في غزة." data-en="Note: proceeds from products and donations support student programs in Gaza.">ملاحظة...</div>
-<div class="grid c3">
-<div class="product"><div class="ph" data-ar="صور المنتجات متاحة على متجر Teemill" data-en="Product photos available on the Teemill store">صور المنتجات متاحة على متجر Teemill</div><div class="product-content"><h3 data-ar="منتجات المبادرة (Teemill)" data-en="Initiative merchandise (Teemill)">منتجات المبادرة</h3><p data-ar="تشكيلة منتجات متجر المبادرة على Teemill." data-en="The initiative's store collection on Teemill.">تشكيلة...</p><div class="cta-row"><a class="btn" href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener" data-ar="تسوّق عبر Teemill" data-en="Shop on Teemill">تسوّق</a></div></div></div>
-<div class="product"><div class="ph" data-ar="صورة الغلاف تُضاف لاحقًا" data-en="Cover image to be added">صورة الغلاف تُضاف لاحقًا</div><div class="product-content"><h3 data-ar="نحن باقون: قصص من طلبة جامعات غزة" data-en="We Are Still Here: Stories from Gaza's University Students">We Are Still Here: Stories from Gaza's University Students</h3><p data-ar="صادر في يوليو 2026 عن Daraja Press. يستند إلى شهادات وقصص وأعمال طلبة من غزة." data-en="Published July 2026 by Daraja Press. Based on testimonies, stories, and works by students from Gaza.">صادر...</p><div class="cta-row"><a class="btn" href="https://darajapress.com/publication/we-are-still-here/" target="_blank" rel="noopener" data-ar="عرض لدى الناشر" data-en="View at publisher">عرض</a></div></div></div>
-<div class="product"><div class="ph" data-ar="صورة الغلاف تُضاف لاحقًا" data-en="Cover image to be added">صورة الغلاف تُضاف لاحقًا</div><div class="product-content"><h3 data-ar="تحت هدير الطائرات المسيرة: في التضامن وشجاعة طلبة غزة" data-en="Beneath the Hum of Drones: On Solidarity and the Courage of Gaza's Students">Beneath the Hum of Drones: On Solidarity and the Courage of Gaza's Students</h3><p data-ar="من تأليف البروفيسور زاهد برانجول، صادر عن Daraja Press." data-en="By Professor Zahid Pranjol, published by Daraja Press.">من تأليف...</p><div class="cta-row"><a class="btn" href="https://darajapress.com/publication/we-are-still-here/" target="_blank" rel="noopener" data-ar="عرض لدى الناشر" data-en="View at publisher">عرض</a></div></div></div>
-</div>
-<div class="card"><h3 data-ar="روابط مباشرة" data-en="Direct links">روابط مباشرة</h3>
-<p><a href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener">Teemill: we-are-still-here-students.teemill.com</a><br>
-<a href="https://darajapress.com/publication/we-are-still-here/" target="_blank" rel="noopener">Daraja Press: darajapress.com/publication/we-are-still-here</a><br>
-<a href="https://chuffed.org/project/we-are-still-here" target="_blank" rel="noopener">Chuffed: chuffed.org/project/we-are-still-here</a></p></div>
-</div></section>
+  <section class="relative overflow-hidden bg-gradient-to-b from-olive-soft via-olive-muted/40 to-cream border-b border-cream-line">
+    <div class="absolute inset-0 keffiyeh opacity-50"></div>
+    <div class="absolute -top-24 -end-24 w-[420px] h-[420px] bg-gold/15 rounded-full blur-[70px]"></div>
+    <div class="relative max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div class="inline-flex items-center gap-2 bg-white border border-cream-line rounded-full px-4 py-1.5 text-xs font-bold text-olive-dark shadow-soft" data-ar="المتجر والدعم" data-en="Shop & support">المتجر والدعم</div>
+      <h1 class="mt-5 text-[32px] lg:text-[44px] font-black tracking-tight leading-tight" data-ar="ادعم برامج الطلبة في غزة" data-en="Support student programs in Gaza">ادعم برامج الطلبة في غزة</h1>
+      <p class="mt-3 text-[15px] lg:text-[16px] leading-7 text-ink-muted max-w-2xl" data-ar="منتجات المبادرة عبر متجر Teemill، والكتابان الصادران عن Daraja Press، مع رابط تبرع مباشر عبر Chuffed." data-en="The initiative's merchandise via the Teemill store, the two books published by Daraja Press, and a direct donation link via Chuffed.">منتجات المبادرة عبر متجر Teemill، والكتابان الصادران عن Daraja Press، مع رابط تبرع مباشر عبر Chuffed.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://chuffed.org/project/we-are-still-here" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-ink hover:text-ink px-7 py-3.5 rounded-full font-extrabold text-sm shadow-card hover:shadow-lift transition" data-ar="تبرع عبر Chuffed" data-en="Donate via Chuffed">تبرع عبر Chuffed <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white border border-cream-line px-7 py-3.5 rounded-full font-bold text-sm hover:shadow-soft transition" data-ar="متجر Teemill" data-en="Teemill Store">متجر Teemill</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 lg:py-16">
+    <div class="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="reveal flex items-start gap-3 bg-gold-light border border-gold/30 rounded-2xl px-5 py-4 mb-8">
+        <div class="w-8 h-8 rounded-full bg-gold flex items-center justify-center shrink-0 mt-0.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
+        <p class="text-sm leading-7 text-gold-deep font-medium" data-ar="ملاحظة: يوجَّه ريع المنتجات والتبرعات لدعم برامج الطلبة في غزة." data-en="Note: proceeds from products and donations support student programs in Gaza.">ملاحظة: يوجَّه ريع المنتجات والتبرعات لدعم برامج الطلبة في غزة.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+
+        <div class="reveal group bg-white rounded-[24px] border border-cream-line overflow-hidden shadow-soft hover:shadow-card hover:-translate-y-1 transition flex flex-col">
+          <div class="relative h-[220px] bg-gradient-to-br from-olive-soft to-cream border-b border-cream-line flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 keffiyeh opacity-30"></div>
+            <div class="relative w-20 h-20 rounded-2xl bg-white border border-cream-line shadow-soft flex items-center justify-center">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3A4D2A" stroke-width="1.6"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <span class="absolute top-3 end-3 bg-olive text-white text-[11px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full">Teemill</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-extrabold text-[16px]" data-ar="منتجات المبادرة (Teemill)" data-en="Initiative merchandise (Teemill)">منتجات المبادرة (Teemill)</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-muted flex-1" data-ar="تشكيلة منتجات متجر المبادرة على Teemill — تيشرتات، هوديز، وأكثر. كل عملية شراء تدعم الطلبة مباشرة." data-en="The initiative's store collection on Teemill — t-shirts, hoodies & more. Every purchase directly supports students.">تشكيلة منتجات متجر المبادرة على Teemill — تيشرتات، هوديز، وأكثر. كل عملية شراء تدعم الطلبة مباشرة.</p>
+            <div class="mt-4 flex items-center gap-2 text-xs font-bold text-ink-muted"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span data-ar="شحن دولي متاح" data-en="International shipping available">شحن دولي متاح</span></div>
+            <a href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener" class="mt-5 inline-flex items-center justify-center gap-2 bg-olive hover:bg-olive-dark text-white px-6 py-3 rounded-full font-bold text-sm transition w-full"><span data-ar="تسوّق عبر Teemill" data-en="Shop on Teemill">تسوّق عبر Teemill</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="rtl:rotate-180"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="reveal group bg-white rounded-[24px] border border-cream-line overflow-hidden shadow-soft hover:shadow-card hover:-translate-y-1 transition flex flex-col" style="--reveal-delay:.08s">
+          <div class="relative h-[220px] bg-gradient-to-br from-gold-light to-cream border-b border-cream-line flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, #C9B48A 0 1px, transparent 1px 12px);"></div>
+            <div class="relative w-28 h-36 rounded-lg bg-white border border-cream-line shadow-card flex flex-col items-center justify-center p-3 text-center rotate-[-2deg] group-hover:rotate-0 transition">
+              <div class="text-[10px] font-extrabold tracking-widest uppercase text-gold-dark">Daraja Press</div>
+              <div class="mt-2 text-[11px] font-black leading-tight text-ink">We Are Still Here</div>
+              <div class="text-[9px] text-ink-muted mt-1">Stories from Gaza's University Students</div>
+              <div class="mt-3 w-8 h-px bg-gold"></div>
+            </div>
+            <span class="absolute top-3 end-3 bg-gold text-ink text-[11px] font-extrabold px-3 py-1 rounded-full">2026</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-extrabold text-[15px] leading-6" data-ar="نحن باقون: قصص من طلبة جامعات غزة" data-en="We Are Still Here: Stories from Gaza's University Students">نحن باقون: قصص من طلبة جامعات غزة</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-muted flex-1" data-ar="صادر في يوليو 2026 عن Daraja Press. يستند إلى شهادات وقصص وأعمال طلبة من غزة." data-en="Published July 2026 by Daraja Press. Based on testimonies, stories, and works by students from Gaza.">صادر في يوليو 2026 عن Daraja Press. يستند إلى شهادات وقصص وأعمال طلبة من غزة.</p>
+            <a href="https://darajapress.com/publication/we-are-still-here/" target="_blank" rel="noopener" class="mt-5 inline-flex items-center justify-center gap-2 bg-white border border-cream-line hover:bg-cream-dark hover:border-gold/30 px-6 py-3 rounded-full font-bold text-sm transition w-full"><span data-ar="عرض لدى الناشر" data-en="View at publisher">عرض لدى الناشر</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="rtl:rotate-180"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+
+        <div class="reveal group bg-white rounded-[24px] border border-cream-line overflow-hidden shadow-soft hover:shadow-card hover:-translate-y-1 transition flex flex-col" style="--reveal-delay:.16s">
+          <div class="relative h-[220px] bg-gradient-to-br from-olive-soft to-cream border-b border-cream-line flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#3A4D2A 1px, transparent 1px); background-size: 14px 14px;"></div>
+            <div class="relative w-28 h-36 rounded-lg bg-olive text-white shadow-card flex flex-col items-center justify-center p-3 text-center rotate-[2deg] group-hover:rotate-0 transition">
+              <div class="text-[9px] font-bold tracking-widest uppercase text-gold">Professor Zahid Pranjol</div>
+              <div class="mt-2 text-[10px] font-black leading-tight">Beneath the Hum of Drones</div>
+              <div class="text-[8px] text-white/70 mt-1">On Solidarity and the Courage of Gaza's Students</div>
+              <div class="mt-3 w-8 h-px bg-gold"></div>
+            </div>
+            <span class="absolute top-3 end-3 bg-olive text-white text-[11px] font-extrabold px-3 py-1 rounded-full">Daraja</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-extrabold text-[15px] leading-6" data-ar="تحت أزيز الطائرات المسيّرة: حول التضامن وشجاعة طلبة غزة" data-en="Beneath the Hum of Drones: On Solidarity and the Courage of Gaza's Students">تحت أزيز الطائرات المسيّرة</h3>
+            <p class="mt-2 text-sm leading-6 text-ink-muted flex-1" data-ar="من تأليف البروفيسور زاهد برانجول، صادر عن Daraja Press." data-en="By Professor Zahid Pranjol, published by Daraja Press.">من تأليف البروفيسور زاهد برانجول، صادر عن Daraja Press.</p>
+            <a href="https://darajapress.com/publication/we-are-still-here/" target="_blank" rel="noopener" class="mt-5 inline-flex items-center justify-center gap-2 bg-white border border-cream-line hover:bg-cream-dark px-6 py-3 rounded-full font-bold text-sm transition w-full"><span data-ar="عرض لدى الناشر" data-en="View at publisher">عرض لدى الناشر</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="rtl:rotate-180"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal mt-8 bg-white rounded-[20px] border border-cream-line p-6 shadow-soft">
+        <h3 class="font-extrabold text-[15px] flex items-center gap-2" data-ar="روابط مباشرة" data-en="Direct links"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> <span data-ar="روابط مباشرة" data-en="Direct links">روابط مباشرة</span></h3>
+        <div class="mt-4 grid sm:grid-cols-3 gap-3 text-sm">
+          <a href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener" class="flex items-center gap-2 p-3 rounded-xl bg-cream border border-cream-line hover:border-olive/20 hover:bg-white transition"><span class="w-8 h-8 rounded-lg bg-olive text-white flex items-center justify-center shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/></svg></span><span class="truncate font-medium">Teemill Store</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ms-auto rtl:rotate-180"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a href="https://darajapress.com/publication/we-are-still-here/" target="_blank" rel="noopener" class="flex items-center gap-2 p-3 rounded-xl bg-cream border border-cream-line hover:border-gold/40 hover:bg-white transition"><span class="w-8 h-8 rounded-lg bg-gold text-ink flex items-center justify-center shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span class="truncate font-medium">Daraja Press</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ms-auto rtl:rotate-180"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a href="https://chuffed.org/project/we-are-still-here" target="_blank" rel="noopener" class="flex items-center gap-2 p-3 rounded-xl bg-gold-light border border-gold/30 hover:bg-gold hover:text-ink transition"><span class="w-8 h-8 rounded-lg bg-gold-dark text-white flex items-center justify-center shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span class="truncate font-bold">Chuffed Donate</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ms-auto rtl:rotate-180"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><div class="container foot-grid">
-<div><h4>We Are Still Here | باقون</h4><p class="foot-tag" data-ar="مبادرة طالبية فلسطينية لدعم وتمكين طلبة الجامعات في غزة." data-en="A Palestinian student-led initiative supporting and empowering Gaza's university students.">مبادرة...</p><p class="foot-mail">wash.team.info@gmail.com</p></div>
-<div><h4 data-ar="روابط سريعة" data-en="Quick links">روابط</h4><ul class="foot-links"><li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li><li><a href="about.html" data-ar="عن المبادرة وبرامجها" data-en="About & Programs">عن المبادرة</a></li><li><a href="team.html" data-ar="الفريق" data-en="Team">الفريق</a></li><li><a href="news.html" data-ar="الأخبار" data-en="News">الأخبار</a></li><li><a href="contact.html" data-ar="تواصل معنا" data-en="Contact">تواصل</a></li><li><a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a></li></ul></div>
-<div><h4 data-ar="تابعنا" data-en="Follow us">تابعنا</h4><div class="social-row"><a href="https://www.facebook.com/share/1C4kzyoLcq/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Follow us on Facebook">Facebook</a><a href="https://www.instagram.com/we.are.still.here" target="_blank" rel="noopener" aria-label="Follow us on Instagram">Instagram</a></div></div>
-<div><h4 data-ar="النشرة البريدية" data-en="Newsletter">النشرة البريدية</h4><p data-ar="اشترك ليصلك جديد البرامج والفعاليات." data-en="Subscribe for program and event updates.">اشترك ليصلك جديد البرامج والفعاليات.</p><form class="newsletter" novalidate><label for="nl-email"><span data-ar="البريد الإلكتروني" data-en="Email address">البريد الإلكتروني</span><input id="nl-email" type="email" name="email" required maxlength="254" autocomplete="email" dir="ltr" placeholder="name@example.com"></label><label class="hp" aria-hidden="true"><span>website</span><input type="text" name="website" tabindex="-1" autocomplete="off"></label><button class="btn gold" type="submit" data-ar="اشترك" data-en="Subscribe">اشترك</button><p class="nl-status" role="status" aria-live="polite" hidden></p></form></div>
-</div><div class="copy"><div class="container" data-ar="© باقون | We Are Still Here — جميع الحقوق محفوظة." data-en="© We Are Still Here | Baqoun — All rights reserved.">© باقون...</div><p class="credit"><a href="https://portfolio-mostafakhrais.vercel.app/" target="_blank" rel="noopener noreferrer" data-ar="تصميم وتطوير: مصطفى خريس" data-en="Designed &amp; developed by Mostafa khrais">تصميم وتطوير: مصطفى خريس</a></p></div></footer>
-<script src="js/main.min.js"></script><script src="js/app-config.min.js"></script><script src="js/newsletter.min.js"></script>
+
+<footer class="bg-[#1F2A18] text-[#EDEBE3] border-t border-white/5">
+  <div class="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr_0.8fr_1.2fr]">
+      <div><div class="flex items-center gap-3"><img src="assets/logo.png" class="w-10 h-10 rounded-xl bg-white p-1"><span class="font-extrabold text-white">We Are Still Here | باقون</span></div><p class="mt-3 text-sm leading-7 text-[#CFCABB]" data-ar="مبادرة طلابية فلسطينية لدعم وتمكين طلبة الجامعات في غزة." data-en="A Palestinian student-led initiative supporting and empowering Gaza's university students.">مبادرة طلابية فلسطينية لدعم وتمكين طلبة الجامعات في غزة.</p><p class="mt-3 text-sm font-medium text-[#CFCABB]">wash.team.info@gmail.com</p></div>
+      <div><h4 class="font-bold text-white mb-4" data-ar="روابط سريعة" data-en="Quick links">روابط</h4><ul class="space-y-2.5 text-sm"><li><a href="index.html" class="text-[#CFCABB] hover:text-white" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li><li><a href="about.html" class="text-[#CFCABB] hover:text-white" data-ar="عن المبادرة وبرامجها" data-en="About & Programs">عن المبادرة وبرامجها</a></li><li><a href="team.html" class="text-[#CFCABB] hover:text-white" data-ar="الفريق" data-en="Team">الفريق</a></li><li><a href="news.html" class="text-[#CFCABB] hover:text-white" data-ar="الأخبار" data-en="News">الأخبار</a></li><li><a href="contact.html" class="text-[#CFCABB] hover:text-white" data-ar="تواصل معنا" data-en="Contact">تواصل</a></li><li><a href="privacy.html" class="text-[#CFCABB] hover:text-white" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a></li></ul></div>
+      <div><h4 class="font-bold text-white mb-4" data-ar="تابعنا" data-en="Follow us">تابعنا</h4><div class="flex flex-wrap gap-2"><a href="https://www.facebook.com/share/1C4kzyoLcq/?mibextid=wwXIfr" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm font-bold hover:bg-white hover:text-[#1F2A18] transition">Facebook</a><a href="https://www.instagram.com/we.are.still.here" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm font-bold hover:bg-white hover:text-[#1F2A18] transition">Instagram</a></div></div>
+      <div><h4 class="font-bold text-white mb-1" data-ar="النشرة البريدية" data-en="Newsletter">النشرة البريدية</h4><p class="text-sm text-[#CFCABB] mb-4" data-ar="اشترك ليصلك جديد البرامج والفعاليات." data-en="Subscribe for program and event updates.">اشترك ليصلك جديد البرامج والفعاليات.</p><form class="newsletter space-y-3" novalidate><input type="email" name="email" required maxlength="254" autocomplete="email" dir="ltr" placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 placeholder:text-white/40 text-white text-sm focus:outline-none focus:border-gold focus:bg-white focus:text-ink transition"><label class="hp" aria-hidden="true"><span>website</span><input type="text" name="website" tabindex="-1" autocomplete="off"></label><button type="submit" class="w-full bg-gold hover:bg-gold-dark text-ink hover:text-ink font-extrabold py-3 rounded-full text-sm transition" data-ar="اشترك" data-en="Subscribe">اشترك</button><p class="nl-status text-sm font-bold hidden" role="status" aria-live="polite"></p></form></div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5"><div class="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#CFCABB]"><span data-ar="© باقون | We Are Still Here — جميع الحقوق محفوظة." data-en="© We Are Still Here | Baqoun — All rights reserved.">© باقون | We Are Still Here — جميع الحقوق محفوظة.</span><a href="https://portfolio-mostafakhrais.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-white font-bold underline underline-offset-4" data-ar="تصميم وتطوير: مصطفى خريس" data-en="Designed & developed by Mostafa Khrais">تصميم وتطوير: مصطفى خريس</a></div></div>
+</footer>
+<script src="js/main.min.js?v=20260919" charset="utf-8"></script><script src="js/app-config.min.js?v=20260919" charset="utf-8"></script><script src="js/newsletter.min.js?v=20260919" charset="utf-8"></script>
 </body>
 </html>

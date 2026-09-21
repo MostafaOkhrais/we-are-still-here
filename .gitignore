@@ -4,9 +4,17 @@
 .env.*
 !.env.example
 api.php
+# archives - never commit
+*.zip
+*.rar
+*.7z
 *.log
 npm-debug.log*
 node_modules/
 .vercel/
 supabase/.temp/
+.DS_Store
+Thumbs.db
+coverage/
+dist/
 

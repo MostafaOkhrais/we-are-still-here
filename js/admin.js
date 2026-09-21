@@ -1,23 +1,21 @@
-/* Private admin dashboard: email+password sign-in + allowlist gate.
-   Token lives in sessionStorage (cleared when the browser closes). No innerHTML anywhere. */
 (function(){
   'use strict';
   function lang(){ return document.documentElement.lang === 'en' ? 'en' : 'ar'; }
   var T = {
-    loginFail: {ar:'بيانات الدخول غير صحيحة.', en:'Incorrect sign-in details.'},
-    notAdmin: {ar:'هذا الحساب غير مصرّح له بالإدارة.', en:'This account is not authorized for admin access.'},
-    expired: {ar:'انتهت الجلسة — سجّل الدخول مجددًا.', en:'Session expired — please sign in again.'},
-    loadFail: {ar:'تعذّر تحميل البيانات.', en:'Could not load data.'},
-    saveFail: {ar:'تعذّر حفظ التغيير.', en:'Could not save the change.'},
-    welcome: {ar:'مرحبًا', en:'Welcome'},
-    noRows: {ar:'لا توجد عناصر بعد.', en:'No items yet.'},
-    unsub: {ar:'إلغاء الاشتراك', en:'Unsubscribe'},
-    resub: {ar:'إعادة الاشتراك', en:'Resubscribe'},
-    subjectFallback: {ar:'(بدون موضوع)', en:'(no subject)'},
+    loginFail: {ar:'\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062f\u062e\u0648\u0644 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d\u0629.', en:'Incorrect sign-in details.'},
+    notAdmin: {ar:'\u0647\u0630\u0627 \u0627\u0644\u062d\u0633\u0627\u0628 \u063a\u064a\u0631 \u0645\u0635\u0631\u0651\u062d \u0644\u0647 \u0628\u0627\u0644\u0625\u062f\u0627\u0631\u0629.', en:'This account is not authorized for admin access.'},
+    expired: {ar:'\u0627\u0646\u062a\u0647\u062a \u0627\u0644\u062c\u0644\u0633\u0629 — \u0633\u062c\u0651\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0645\u062c\u062f\u062f\u064b\u0627.', en:'Session expired — please sign in again.'},
+    loadFail: {ar:'\u062a\u0639\u0630\u0651\u0631 \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a.', en:'Could not load data.'},
+    saveFail: {ar:'\u062a\u0639\u0630\u0651\u0631 \u062d\u0641\u0638 \u0627\u0644\u062a\u063a\u064a\u064a\u0631.', en:'Could not save the change.'},
+    welcome: {ar:'\u0645\u0631\u062d\u0628\u064b\u0627', en:'Welcome'},
+    noRows: {ar:'\u0644\u0627 \u062a\u0648\u062c\u062f \u0639\u0646\u0627\u0635\u0631 \u0628\u0639\u062f.', en:'No items yet.'},
+    unsub: {ar:'\u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0627\u0634\u062a\u0631\u0627\u0643', en:'Unsubscribe'},
+    resub: {ar:'\u0625\u0639\u0627\u062f\u0629 \u0627\u0644\u0627\u0634\u062a\u0631\u0627\u0643', en:'Resubscribe'},
+    subjectFallback: {ar:'(\u0628\u062f\u0648\u0646 \u0645\u0648\u0636\u0648\u0639)', en:'(no subject)'},
     st: {
-      new: {ar:'جديدة', en:'New'}, read: {ar:'مقروءة', en:'Read'},
-      replied: {ar:'تم الرد', en:'Replied'}, archived: {ar:'مؤرشفة', en:'Archived'},
-      active: {ar:'نشط', en:'Active'}, unsubscribed: {ar:'ملغي', en:'Unsubscribed'}
+      new: {ar:'\u062c\u062f\u064a\u062f\u0629', en:'New'}, read: {ar:'\u0645\u0642\u0631\u0648\u0621\u0629', en:'Read'},
+      replied: {ar:'\u062a\u0645 \u0627\u0644\u0631\u062f', en:'Replied'}, archived: {ar:'\u0645\u0624\u0631\u0634\u0641\u0629', en:'Archived'},
+      active: {ar:'\u0646\u0634\u0637', en:'Active'}, unsubscribed: {ar:'\u0645\u0644\u063a\u064a', en:'Unsubscribed'}
     }
   };
   function t(k){ return T[k][lang()]; }
@@ -76,7 +74,7 @@
     document.getElementById('login-view').hidden = true;
     document.getElementById('app-view').hidden = false;
     var who = document.getElementById('admin-who');
-    who.textContent = t('welcome') + '، ' + email;
+    who.textContent = t('welcome') + '\u060c ' + email;
     loadAll();
   }
   function showLogin(){
@@ -114,7 +112,7 @@
       tr.appendChild(el('td', null, fmtDate(m.created_at)));
       tr.appendChild(el('td', null, m.name || ''));
       var tdE = el('td'), a = el('a', null, m.email || '');
-      a.setAttribute('href', 'mailto:' + (m.email || '')); a.setAttribute('dir', 'ltr');
+      a.setAttribute('href', 'mailto:' + encodeURIComponent(m.email || '')); a.setAttribute('dir', 'ltr');
       tdE.appendChild(a); tr.appendChild(tdE);
       var tdM = el('td', 'msg');
       var det = el('details'), sum = el('summary', null, (m.subject || t('subjectFallback')));
@@ -162,7 +160,7 @@
       if(s.status === 'active') active++;
       var tr = el('tr');
       var tdE = el('td'), a = el('a', null, s.email || '');
-      a.setAttribute('href', 'mailto:' + (s.email || '')); a.setAttribute('dir', 'ltr');
+      a.setAttribute('href', 'mailto:' + encodeURIComponent(s.email || '')); a.setAttribute('dir', 'ltr');
       tdE.appendChild(a); tr.appendChild(tdE);
       tr.appendChild(el('td', null, s.name || '—'));
       tr.appendChild(el('td', null, fmtDate(s.created_at)));
@@ -210,23 +208,22 @@
   }
   function loadAll(){ hideSt('app-status'); loadMessages(); loadSubs(); loadPosts(); }
 
-  /* ---- News posts CRUD ---- */
   var POST_CAT = {
-    news: {ar: 'خبر', en: 'News'},
-    update: {ar: 'تطور', en: 'Update'},
-    event: {ar: 'فعالية', en: 'Event'}
+    news: {ar: '\u062e\u0628\u0631', en: 'News'},
+    update: {ar: '\u062a\u0637\u0648\u0631', en: 'Update'},
+    event: {ar: '\u0641\u0639\u0627\u0644\u064a\u0629', en: 'Event'}
   };
   var PT = {
-    published: {ar: 'منشور', en: 'Published'},
-    draft: {ar: 'مسودة', en: 'Draft'},
-    edit: {ar: 'تعديل', en: 'Edit'},
-    del: {ar: 'حذف', en: 'Delete'},
-    publish: {ar: 'نشر', en: 'Publish'},
-    unpublish: {ar: 'إخفاء', en: 'Unpublish'},
-    confirmDel: {ar: 'حذف هذا المنشور نهائيًا؟', en: 'Delete this post permanently?'},
-    saved: {ar: 'تم الحفظ بنجاح.', en: 'Saved successfully.'},
-    deleted: {ar: 'تم الحذف.', en: 'Deleted.'},
-    needBoth: {ar: 'أدخل العنوان والنص باللغتين.', en: 'Enter the title and body in both languages.'}
+    published: {ar: '\u0645\u0646\u0634\u0648\u0631', en: 'Published'},
+    draft: {ar: '\u0645\u0633\u0648\u062f\u0629', en: 'Draft'},
+    edit: {ar: '\u062a\u0639\u062f\u064a\u0644', en: 'Edit'},
+    del: {ar: '\u062d\u0630\u0641', en: 'Delete'},
+    publish: {ar: '\u0646\u0634\u0631', en: 'Publish'},
+    unpublish: {ar: '\u0625\u062e\u0641\u0627\u0621', en: 'Unpublish'},
+    confirmDel: {ar: '\u062d\u0630\u0641 \u0647\u0630\u0627 \u0627\u0644\u0645\u0646\u0634\u0648\u0631 \u0646\u0647\u0627\u0626\u064a\u064b\u0627\u061f', en: 'Delete this post permanently?'},
+    saved: {ar: '\u062a\u0645 \u0627\u0644\u062d\u0641\u0638 \u0628\u0646\u062c\u0627\u062d.', en: 'Saved successfully.'},
+    deleted: {ar: '\u062a\u0645 \u0627\u0644\u062d\u0630\u0641.', en: 'Deleted.'},
+    needBoth: {ar: '\u0623\u062f\u062e\u0644 \u0627\u0644\u0639\u0646\u0648\u0627\u0646 \u0648\u0627\u0644\u0646\u0635 \u0628\u0627\u0644\u0644\u063a\u062a\u064a\u0646.', en: 'Enter the title and body in both languages.'}
   };
   function pt(k){ return PT[k][lang()]; }
   function pcat(c){ return (POST_CAT[c] || {ar: c, en: c})[lang()]; }
@@ -337,9 +334,9 @@
       .catch(postFail);
   }
 
-  /* ---- CSV export (client-side backup of already-loaded rows) ---- */
   function csvCell(v){
     var s = v == null ? '' : String(v);
+    if(/^[=+\-@\t\r]/.test(s)) s = "'" + s;
     return '"' + s.replace(/"/g, '""') + '"';
   }
   function downloadCSV(name, headers, rows){
@@ -409,13 +406,13 @@
         setSession(sess.access_token, email);
         return api('/rest/v1/admin_allowlist?select=email&email=eq.' + encodeURIComponent(email) + '&limit=1')
           .then(function(rows){
-            if(!rows || !rows.length){ setSession(null, null); showSt('login-status', 'err', t('notAdmin')); return; }
+            if(!rows || !rows.length){ setSession(null, null); showSt('login-status', 'err', t('loginFail')); return; }
             document.getElementById('a-pass').value = '';
             showApp(email);
           });
       }).catch(function(e){
         setSession(null, null);
-        showSt('login-status', 'err', (e && e.code === 'auth') ? t('notAdmin') : t('loginFail'));
+        showSt('login-status', 'err', t('loginFail'));
       });
     });
     var tok = null, em = null;

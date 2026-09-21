@@ -1,20 +1,18 @@
-/* Public news page: reads PUBLISHED posts only (anon RLS policy enforces this).
-   No innerHTML anywhere — all rendering via DOM. */
 (function(){
   'use strict';
   function lang(){ return document.documentElement.lang === 'en' ? 'en' : 'ar'; }
   var CAT = {
-    news: {ar: 'خبر', en: 'News'},
-    update: {ar: 'تطور', en: 'Update'},
-    event: {ar: 'فعالية', en: 'Event'}
+    news: {ar: '\u062e\u0628\u0631', en: 'News'},
+    update: {ar: '\u062a\u062d\u062f\u064a\u062b', en: 'Update'},
+    event: {ar: '\u0641\u0639\u0627\u0644\u064a\u0629', en: 'Event'}
   };
   var T = {
-    fail: {ar: 'تعذّر تحميل الأخبار. حاول مجددًا لاحقًا.', en: 'Could not load news. Please try again later.'},
-    upcoming: {ar: 'قادمة', en: 'Upcoming'},
-    ended: {ar: 'انتهت', en: 'Past'},
-    published: {ar: 'نُشر بتاريخ', en: 'Published'},
-    eventDate: {ar: 'الموعد', en: 'Date'},
-    location: {ar: 'المكان', en: 'Location'}
+    fail: {ar: '\u062a\u0639\u0630\u0651\u0631 \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0623\u062e\u0628\u0627\u0631. \u062d\u0627\u0648\u0644 \u0645\u062c\u062f\u062f\u064b\u0627 \u0644\u0627\u062d\u0642\u064b\u0627.', en: 'Could not load news. Please try again later.'},
+    upcoming: {ar: '\u0642\u0627\u062f\u0645\u0629', en: 'Upcoming'},
+    ended: {ar: '\u0627\u0646\u062a\u0647\u062a', en: 'Past'},
+    published: {ar: '\u0646\u064f\u0634\u0631 \u0628\u062a\u0627\u0631\u064a\u062e', en: 'Published'},
+    eventDate: {ar: '\u0627\u0644\u0645\u0648\u0639\u062f', en: 'Date'},
+    location: {ar: '\u0627\u0644\u0645\u0643\u0627\u0646', en: 'Location'}
   };
   function t(k){ return T[k][lang()]; }
   function catLabel(c){ return (CAT[c] || {ar: c, en: c})[lang()]; }
@@ -106,7 +104,7 @@
         render();
       });
     });
-    /* Re-render translated content after main.js switches language. */
+
     document.querySelectorAll('.lang-toggle').forEach(function(b){
       b.addEventListener('click', function(){ render(); });
     });
