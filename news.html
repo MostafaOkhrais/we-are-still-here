@@ -11,28 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
+<script src="js/tailwind-config.js"></script>
 <script src="https://cdn.tailwindcss.com/3.4.10"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        olive: { DEFAULT: '#3A4D2A', dark: '#2D3D1F', light: '#4A5D3A', soft: '#E8EDE0', muted: '#F0F3EC' },
-        cream: { DEFAULT: '#FAF9F6', dark: '#F5F1EB', line: '#E8E0D0' },
-        gold: { DEFAULT: '#C9B48A', dark: '#A68F5E', deep: '#6B5A2E', light: '#F5ECD6' },
-        ink: { DEFAULT: '#1E1E1E', muted: '#5C5C5C', light: '#8A8A8A' }
-      },
-            fontFamily:{thmanyah:['Thmanyah Sans','sans-serif'],display:['Thmanyah Serif Display','serif'],text:['Thmanyah Serif Text','serif'],inter:['Inter','sans-serif']},
-      borderRadius: { '4xl': '2rem' },
-      boxShadow: {
-        'soft': '0 2px 20px rgba(58,77,42,0.06)',
-        'card': '0 8px 30px rgba(58,77,42,0.08)',
-        'lift': '0 20px 40px rgba(58,77,42,0.12)',
-      }
-    }
-  }
-}
-</script>
 <style>* { font-family: 'Thmanyah Sans', sans-serif; }html[lang="en"] * { font-family: 'Inter', sans-serif; }html{scroll-behavior:smooth}.glass{backdrop-filter:blur(16px)}.scroll-progress{position:fixed;top:0;inset-inline-start:0;width:100%;height:3px;z-index:60;pointer-events:none;background:linear-gradient(90deg,#3A4D2A,#C9B48A);transform:scaleX(0);transform-origin:right center}html[dir="ltr"] .scroll-progress{transform-origin:left center}.to-top { position: fixed; bottom: 24px; inset-inline-end: 24px; z-index: 60; width: 52px; height: 52px; border-radius: 9999px; background: linear-gradient(135deg, #3A4D2A 0%, #4A5D3A 100%); border: 1px solid rgba(255,255,255,0.12); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(58,77,42,0.28), 0 2px 8px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transform: translateY(12px) scale(0.95); transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
 .to-top.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
 .to-top:hover { background: linear-gradient(135deg, #2D3D1F 0%, #3A4D2A 100%); transform: translateY(-2px) scale(1.05); box-shadow: 0 12px 32px rgba(58,77,42,0.35), 0 4px 12px rgba(0,0,0,0.15); }
