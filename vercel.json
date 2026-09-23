@@ -14,7 +14,7 @@
     { "source": "/api/rest/contact_messages", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/rest/v1/contact_messages" },
     { "source": "/api/rest/newsletter_subscribers", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/rest/v1/newsletter_subscribers" },
     { "source": "/api/rest/news_posts", "destination": "https://dnvjfaaxfydvujkqsdfu.supabase.co/rest/v1/news_posts" },
-    { "source": "/((?!api/|assets/|js/|css/|maintenance|_next).*)", "destination": "/maintenance.html" }
+    { "source": "/maintenance", "destination": "/maintenance.html" }
   ],
   "headers": [
     {
