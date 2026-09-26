@@ -8,7 +8,7 @@ window.WASH_TEAM = {
       titleEn: "Leadership",
       members: [
         { photo: "assets/zahid-pranjol.jpg", nameAr: "زاهد برانجول", nameEn: "Professor Zahid Pranjol", roleAr: "المؤسس والمدير", roleEn: "Founder and Director", alt: "Professor Zahid Pranjol" },
-        { photo: "assets/obay-jouda.jpg", nameAr: "أبي جودة", nameEn: "Obay Jouda", roleAr: "قائد المشروع في غزة", roleEn: "Gaza Project Lead", alt: "Obay Jouda" },
+        { photo: "assets/obay-jouda.jpg", nameAr: "أُبي جودة", nameEn: "Obay Jouda", roleAr: "قائد المشروع في غزة", roleEn: "Gaza Project Lead", alt: "Obay Jouda" },
         { photo: "assets/saad-muhana.jpg", nameAr: "سعد مهنا", nameEn: "Saad Muhana", roleAr: "عضو أول", roleEn: "Senior Member", alt: "Saad Muhana" },
         { photo: "assets/hada-mohammed.jpg", nameAr: "هدى محمد", nameEn: "Hada Mohammed", roleAr: "عضو أول", roleEn: "Senior Member", alt: "Hada Mohammed" }
       ]
