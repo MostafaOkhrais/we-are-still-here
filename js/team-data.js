@@ -33,10 +33,10 @@ window.WASH_TEAM = {
       titleAr: "التواصل الاجتماعي والمشاركة الرقمية",
       titleEn: "Social Media & Digital Engagement",
       members: [
-        { photo: "assets/hadeel-abu-tawela.jpg", nameAr: "هديل أبو طويلة", nameEn: "Hadeel Abu Tawela", roleAr: "التواصل الاجتماعي", roleEn: "Social Media", alt: "" },
-        { photo: "assets/sohair-hamdan.jpg", nameAr: "سهير حمدان", nameEn: "Sohair Hamdan", roleAr: "التواصل الاجتماعي", roleEn: "Social Media", alt: "" },
-        { photo: "assets/ikhlas-abu-ouda.jpg", nameAr: "إخلاص أبو عودة", nameEn: "Ikhlas Abu Ouda", roleAr: "التواصل الاجتماعي", roleEn: "Social Media", alt: "" },
-        { photo: "assets/reem-al-astal.jpg", nameAr: "ريم الأسطل", nameEn: "Reem Al-Astal", roleAr: "التواصل الاجتماعي", roleEn: "Social Media", alt: "" }
+        { photo: "assets/hadeel-abu-tawela.jpg", nameAr: "هديل أبو طويلة", nameEn: "Hadeel Abu Tawela", roleAr: "التواصل الاجتماعي", roleEn: "Social Media", alt: "Hadeel Abu Tawela" },
+        { photo: "assets/sohair-hamdan.jpg", nameAr: "سهير حمدان", nameEn: "Sohair Hamdan", roleAr: "التواصل الاجتماعي", roleEn: "Social Media", alt: "Sohair Hamdan" },
+        { photo: "assets/ikhlas-abu-ouda.jpg", nameAr: "إخلاص أبو عودة", nameEn: "Ikhlas Abu Ouda", roleAr: "التواصل الاجتماعي", roleEn: "Social Media", alt: "Ikhlas Abu Ouda" },
+        { photo: "assets/reem-al-astal.jpg", nameAr: "ريم الأسطل", nameEn: "Reem Al-Astal", roleAr: "التواصل الاجتماعي", roleEn: "Social Media", alt: "Reem Al-Astal" }
       ]
     },
     {
@@ -46,10 +46,10 @@ window.WASH_TEAM = {
       titleAr: "العلاقات العامة والخارجية",
       titleEn: "Public Relations & External Relations",
       members: [
-        { photo: "assets/tawfiq-khaled-abed.jpg", nameAr: "توفيق عابد", nameEn: "Tawfiq Abed", roleAr: "العلاقات العامة", roleEn: "Public Relations", alt: "" },
-        { photo: "assets/mahmoud-al-ajrami.jpg", nameAr: "محمود العجرمي", nameEn: "Mahmoud Al-Ajrami", roleAr: "العلاقات العامة", roleEn: "Public Relations", alt: "" },
-        { photo: "assets/dania-jouda.jpg", nameAr: "دانية جودة", nameEn: "Dania Jouda", roleAr: "العلاقات العامة", roleEn: "Public Relations", alt: "" },
-        { photo: "assets/farah-abdallah.jpg", nameAr: "فرح عبد الله", nameEn: "Farah Abdallah", roleAr: "العلاقات العامة", roleEn: "Public Relations", alt: "" }
+        { photo: "assets/tawfiq-khaled-abed.jpg", nameAr: "توفيق عابد", nameEn: "Tawfiq Abed", roleAr: "العلاقات العامة", roleEn: "Public Relations", alt: "Tawfiq Abed" },
+        { photo: "assets/mahmoud-al-ajrami.jpg", nameAr: "محمود العجرمي", nameEn: "Mahmoud Al-Ajrami", roleAr: "العلاقات العامة", roleEn: "Public Relations", alt: "Mahmoud Al-Ajrami" },
+        { photo: "assets/dania-jouda.jpg", nameAr: "دانية جودة", nameEn: "Dania Jouda", roleAr: "العلاقات العامة", roleEn: "Public Relations", alt: "Dania Jouda" },
+        { photo: "assets/farah-abdallah.jpg", nameAr: "فرح عبد الله", nameEn: "Farah Abdallah", roleAr: "العلاقات العامة", roleEn: "Public Relations", alt: "Farah Abdallah" }
       ]
     },
     {
@@ -59,11 +59,11 @@ window.WASH_TEAM = {
       titleAr: "البرامج المجتمعية والعمليات",
       titleEn: "Community Programmes & Operations",
       members: [
-        { photo: "assets/jood-sabea.jpg", nameAr: "جود سبع", nameEn: "Jood Sabea", roleAr: "منسق عام", roleEn: "General Coordinator", alt: "" },
-        { photo: "assets/ahmed-albardweel.jpg", nameAr: "أحمد البردويل", nameEn: "Ahmed Albardweel", roleAr: "الخدمات اللوجستية", roleEn: "Logistics", alt: "" },
-        { photo: "assets/essam-shahla.jpg", nameAr: "عصام شهلا", nameEn: "Essam Shahla", roleAr: "الخدمات اللوجستية", roleEn: "Logistics", alt: "" },
-        { photo: "assets/ahmad-hamdouna.jpg", nameAr: "أحمد حمدونة", nameEn: "Ahmad Hamdouna", roleAr: "الخدمات اللوجستية", roleEn: "Logistics", alt: "" },
-        { photo: "assets/sara-alajrami.jpg", nameAr: "سارة العجرمي", nameEn: "Sara AlAjrami", roleAr: "الملصقات وحملات التوعية", roleEn: "Posters & Awareness Campaigns", alt: "" }
+        { photo: "assets/jood-sabea.jpg", nameAr: "جود سبع", nameEn: "Jood Sabea", roleAr: "منسق عام", roleEn: "General Coordinator", alt: "Jood Sabea" },
+        { photo: "assets/ahmed-albardweel.jpg", nameAr: "أحمد البردويل", nameEn: "Ahmed Albardweel", roleAr: "الخدمات اللوجستية", roleEn: "Logistics", alt: "Ahmed Albardweel" },
+        { photo: "assets/essam-shahla.jpg", nameAr: "عصام شهلا", nameEn: "Essam Shahla", roleAr: "الخدمات اللوجستية", roleEn: "Logistics", alt: "Essam Shahla" },
+        { photo: "assets/ahmad-hamdouna.jpg", nameAr: "أحمد حمدونة", nameEn: "Ahmad Hamdouna", roleAr: "الخدمات اللوجستية", roleEn: "Logistics", alt: "Ahmad Hamdouna" },
+        { photo: "assets/sara-alajrami.jpg", nameAr: "سارة العجرمي", nameEn: "Sara AlAjrami", roleAr: "الملصقات وحملات التوعية", roleEn: "Posters & Awareness Campaigns", alt: "Sara AlAjrami" }
       ]
     },
     {
@@ -73,7 +73,7 @@ window.WASH_TEAM = {
       titleAr: "دعم الطلبة والمنح الدراسية",
       titleEn: "Student Support & Scholarships",
       members: [
-        { photo: "assets/aya-alhindy.jpg", nameAr: "آية الهندي", nameEn: "Aya Alhindy", roleAr: "دعم المنح الدراسية", roleEn: "Scholarship Support", alt: "" }
+        { photo: "assets/aya-alhindy.jpg", nameAr: "آية الهندي", nameEn: "Aya Alhindy", roleAr: "دعم المنح الدراسية", roleEn: "Scholarship Support", alt: "Aya Alhindy" }
       ]
     }
   ]

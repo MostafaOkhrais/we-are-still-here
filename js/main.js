@@ -1,7 +1,7 @@
 (function(){
   document.documentElement.classList.add('js-enabled');
   var KEY='wash-lang';
-  function current(){ try{return localStorage.getItem(KEY)||'ar';}catch(e){return 'ar';} }
+  function current(){ try{var q=null; try{q=new URLSearchParams(window.location.search).get('lang');}catch(e){} if(q==='ar'||q==='en'){try{localStorage.setItem(KEY,q);}catch(e){} return q;} return localStorage.getItem(KEY)||'ar';}catch(e){return 'ar';} }
   function apply(lang){
     document.documentElement.lang = lang==='ar'?'ar':'en';
     document.documentElement.dir = lang==='ar'?'rtl':'ltr';
