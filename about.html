@@ -4,7 +4,8 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>عن المبادرة وبرامجها | About & Programs — باقون We Are Still Here</title>
 <meta name="description" content="قصة باقون، الرؤية والرسالة والقيم، البرامج الأربعة، الهيكل التنظيمي العام، والشراكات.">
-<meta property="og:title" content="About & Programs — We Are Still Here | باقون"><meta property="og:type" content="website"><meta property="og:image" content="assets/logo.png">
+<meta property="og:title" content="About & Programs — We Are Still Here | باقون"><meta property="og:type" content="website"><meta property="og:url" content="https://we-are-still-here-ten.vercel.app/about"><meta property="og:image" content="https://we-are-still-here-ten.vercel.app/assets/logo.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<link rel="canonical" href="https://we-are-still-here-ten.vercel.app/about">
 <link rel="icon" href="assets/logo.png" type="image/png">
 <meta property="og:site_name" content="We Are Still Here | باقون">
 <meta property="og:locale" content="ar_AR">
@@ -16,29 +17,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        olive: { DEFAULT: '#3A4D2A', dark: '#2D3D1F', light: '#4A5D3A', soft: '#E8EDE0', muted: '#F0F3EC' },
-        cream: { DEFAULT: '#FAF9F6', dark: '#F5F1EB', line: '#E8E0D0' },
-        gold: { DEFAULT: '#C9B48A', dark: '#A68F5E', deep: '#6B5A2E', light: '#F5ECD6' },
-        ink: { DEFAULT: '#1E1E1E', muted: '#5C5C5C', light: '#8A8A8A' }
-      },
-      fontFamily:{thmanyah:['Thmanyah Sans','sans-serif'],display:['Thmanyah Serif Display','serif'],text:['Thmanyah Serif Text','serif'],inter:['Inter','sans-serif']},
-      borderRadius: { '4xl': '2rem' },
-      boxShadow: {
-        'soft': '0 2px 20px rgba(58,77,42,0.06)',
-        'card': '0 8px 30px rgba(58,77,42,0.08)',
-        'lift': '0 20px 40px rgba(58,77,42,0.12)',
-      }
-    }
-  }
-}
-
-</script>
+<script src="https://cdn.tailwindcss.com/3.4.10"></script>
+<script src="js/tailwind-config.js"></script>
 <style>
 * { font-family: 'Thmanyah Sans', sans-serif; }html[lang="en"] * { font-family: 'Inter', sans-serif; }html{scroll-behavior:smooth}
 .keffiyeh{background-image:repeating-linear-gradient(0deg,transparent 0 14px,rgba(58,77,42,0.04) 14px 15px),repeating-linear-gradient(90deg,transparent 0 14px,rgba(58,77,42,0.04) 14px 15px)}
@@ -66,12 +46,12 @@ tailwind.config = {
   <div class="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center gap-3 h-[64px] lg:h-[72px]">
       <a href="index.html" class="flex items-center gap-3 flex-1 lg:flex-none min-w-0">
-        <div class="w-10 h-10 rounded-xl bg-white border border-cream-line flex items-center justify-center overflow-hidden shadow-soft shrink-0"><img src="assets/logo.png" alt="We Are Still Here logo" data-ar-alt="شعار مبادرة باقون" data-en-alt="We Are Still Here logo" width="40" height="40" class="w-full h-full object-cover"></div>
-        <div class="min-w-0 leading-none"><span class="block font-extrabold text-[15px] lg:text-[16px] tracking-tight" data-ar="باقون | We Are Still Here" data-en="We Are Still Here | Baqoun">باقون | We Are Still Here</span><small class="block text-[11px] lg:text-xs text-ink-muted font-medium truncate" data-ar="مبادرة طلابية فلسطينية لدعم طلبة جامعات غزة" data-en="A Palestinian student-led initiative supporting Gaza's university students">مبادرة طلابية فلسطينية</small></div>
+        <div class="w-10 h-10 rounded-xl bg-white border border-cream-line flex items-center justify-center overflow-hidden shadow-soft shrink-0"><img src="assets/logo.png" alt="We Are Still Here logo" data-ar-alt="شعار مبادرة باقون" data-en-alt="We Are Still Here logo" width="80" height="80" decoding="async" fetchpriority="high" class="w-full h-full object-contain p-[4px]"></div>
+        <div class="min-w-0 leading-none"><span class="block font-extrabold text-[15px] lg:text-[16px] tracking-tight" data-ar="باقون | We Are Still Here" data-en="We Are Still Here | باقون">باقون | We Are Still Here</span><small class="block text-[11px] lg:text-xs text-ink-muted font-medium truncate" data-ar="مبادرة طلابية فلسطينية لدعم طلبة جامعات غزة" data-en="Supporting Gaza's university students">مبادرة طلابية فلسطينية</small></div>
       </a>
       <nav class="hidden lg:flex items-center gap-1 ms-auto" id="main-nav">
         <a href="index.html" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-        <a href="about.html" class="px-[14px] py-2 rounded-full text-sm font-bold bg-olive-soft text-olive-dark" aria-current="page" data-ar="عن المبادرة وبرامجها" data-en="About & Programs">عن المبادرة وبرامجها</a>
+        <a href="about.html" class="whitespace-nowrap px-[14px] py-2 rounded-full text-sm font-bold bg-olive-soft text-olive-dark" aria-current="page" data-ar="عن المبادرة وبرامجها" data-en="About & Programs">عن المبادرة وبرامجها</a>
         <a href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="المتجر" data-en="Shop">المتجر</a>
         <a href="team.html" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="الفريق" data-en="Team">الفريق</a>
         <a href="news.html" class="px-[14px] py-2 rounded-full text-sm font-semibold hover:bg-white transition" data-ar="الأخبار" data-en="News">الأخبار</a>
@@ -102,8 +82,7 @@ tailwind.config = {
     <div class="absolute inset-0 keffiyeh opacity-[0.5]"></div>
     <div class="absolute -top-24 -end-24 w-[420px] h-[420px] bg-gold/15 rounded-full blur-[70px]"></div>
     <div class="relative max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
-      <div class="inline-flex items-center gap-2 bg-white border border-cream-line rounded-full px-4 py-1.5 text-xs font-bold text-olive-dark shadow-soft" data-ar="عن المبادرة وبرامجها" data-en="About & Programs">عن المبادرة وبرامجها</div>
-      <h1 class="mt-5 text-[32px] lg:text-[42px] font-black tracking-tight leading-tight max-w-3xl" data-ar="قصة باقون: من دعم تطوعي إلى مبادرة مجتمعية" data-en="The story of Baqoun: from voluntary support to a community initiative">قصة باقون: من دعم تطوعي إلى مبادرة مجتمعية</h1>
+      <h1 class="text-[32px] lg:text-[42px] font-black tracking-tight leading-tight max-w-3xl" data-ar="قصة باقون: من دعم تطوعي إلى مبادرة مجتمعية" data-en="The story of Baqoun: from voluntary support to a community initiative">قصة باقون: من دعم تطوعي إلى مبادرة مجتمعية</h1>
       <p class="mt-4 text-[15px] lg:text-[16px] leading-8 text-ink-muted max-w-3xl" data-ar="في أبريل 2024، بادر البروفيسور زاهد برانجول إلى تقديم دعم أكاديمي تطوعي لطلبة غزة ومساعدتهم على مواصلة التعلم رغم الظروف الصعبة. ومع تفاقم الاحتياجات واتساع نطاق العمل، تطورت هذه الجهود إلى مبادرة طلابية ومجتمعية تحمل اسم We Are Still Here | باقون — بدأت بهدف دعم الطلبة ومساعدتهم على الاستمرار في تعليمهم، ثم توسعت لتشمل تمكين الشباب الفلسطيني وتعزيز قدرتهم على المبادرة والقيادة والمشاركة المجتمعية." data-en="In April 2024, Professor Zahid Pranjol initiated voluntary academic support for Gaza's students, helping them continue learning despite difficult circumstances. As needs grew and the scope widened, these efforts evolved into a student-led and community-based initiative named We Are Still Here | Baqoun — which began with the aim of supporting students to continue their education, then broadened to empowering Palestinian youth and strengthening their capacity for initiative, leadership, and community participation.">في أبريل 2024، بادر البروفيسور زاهد برانجول إلى تقديم دعم أكاديمي تطوعي لطلبة غزة ومساعدتهم على مواصلة التعلم رغم الظروف الصعبة. ومع تفاقم الاحتياجات واتساع نطاق العمل، تطورت هذه الجهود إلى مبادرة طلابية ومجتمعية تحمل اسم We Are Still Here | باقون — بدأت بهدف دعم الطلبة ومساعدتهم على الاستمرار في تعليمهم، ثم توسعت لتشمل تمكين الشباب الفلسطيني وتعزيز قدرتهم على المبادرة والقيادة والمشاركة المجتمعية.</p>
     </div>
   </section>
@@ -113,18 +92,22 @@ tailwind.config = {
       <div class="grid lg:grid-cols-2 gap-5">
         <div class="reveal relative overflow-hidden bg-white rounded-[24px] border border-cream-line p-7 lg:p-8 shadow-soft hover:shadow-card transition">
           <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-olive to-olive-light"></div>
-          <div class="w-12 h-12 rounded-2xl bg-olive text-white flex items-center justify-center mb-5">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-olive text-white flex items-center justify-center shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h2 class="text-[20px] font-black" data-ar="الرؤية" data-en="Vision">الرؤية</h2>
           </div>
-          <h2 class="text-[20px] font-black" data-ar="الرؤية" data-en="Vision">الرؤية</h2>
           <p class="mt-3 text-sm leading-7 text-ink-muted" data-ar="أن تصبح باقون | We Are Still Here منصة موثوقة ورائدة لدعم وتمكين الطلبة الجامعيين الفلسطينيين، وفضاءً يتيح لهم الوصول إلى الموارد والفرص والمعرفة والدعم اللازم لمواصلة التعلم وتطوير قدراتهم وتعزيز مشاركتهم وقيادتهم وتحقيق طموحاتهم رغم الظروف الاستثنائية." data-en="To become a trusted, leading platform supporting and empowering Palestinian university students — a space giving them access to the resources, opportunities, knowledge, and support needed to continue learning, develop their capacities, strengthen participation and leadership, and achieve ambitions despite exceptional circumstances.">أن تصبح باقون | We Are Still Here منصة موثوقة ورائدة لدعم وتمكين الطلبة الجامعيين الفلسطينيين، وفضاءً يتيح لهم الوصول إلى الموارد والفرص والمعرفة والدعم اللازم لمواصلة التعلم وتطوير قدراتهم وتعزيز مشاركتهم وقيادتهم وتحقيق طموحاتهم رغم الظروف الاستثنائية.</p>
         </div>
         <div class="reveal relative overflow-hidden bg-olive text-white rounded-[24px] p-7 lg:p-8 shadow-card" style="--reveal-delay:.08s">
           <div class="absolute -top-16 -end-16 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-          <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center mb-5">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center shrink-0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h2 class="text-[20px] font-black" data-ar="الرسالة" data-en="Mission">الرسالة</h2>
           </div>
-          <h2 class="text-[20px] font-black" data-ar="الرسالة" data-en="Mission">الرسالة</h2>
           <p class="mt-3 text-sm leading-7 text-white/85" data-ar="دعم وتمكين الطلبة الجامعيين الفلسطينيين وحماية حقهم في التعليم والتطور، من خلال برامج تعليمية وتدريبية، ودعم للطلبة والمنح والفرص، ومبادرات ثقافية وأدبية وفنية، وشراكات أكاديمية ومجتمعية، تُصمَّم استنادًا إلى احتياجات الطلبة الفعلية وتجاربهم المباشرة." data-en="To support and empower Palestinian university students and protect their right to education and development, through educational and training programs, student support, scholarships and opportunities, cultural, literary and artistic initiatives, and academic and community partnerships — designed on the basis of students' actual needs and direct experiences.">دعم وتمكين الطلبة الجامعيين الفلسطينيين وحماية حقهم في التعليم والتطور، من خلال برامج تعليمية وتدريبية، ودعم للطلبة والمنح والفرص، ومبادرات ثقافية وأدبية وفنية، وشراكات أكاديمية ومجتمعية، تُصمَّم استنادًا إلى احتياجات الطلبة الفعلية وتجاربهم المباشرة.</p>
         </div>
       </div>
@@ -137,7 +120,6 @@ tailwind.config = {
         <div>
           <div class="inline-flex items-center gap-2 text-[11px] font-extrabold tracking-[0.18em] text-gold-dark uppercase"><span class="w-8 h-px bg-gold-dark"></span><span data-ar="قيمنا" data-en="Values">قيمنا</span></div>
           <h2 class="reveal text-[26px] lg:text-[30px] font-black mt-1" data-ar="قيمنا الجوهرية" data-en="Our core values">قيمنا الجوهرية</h2>
-          <p class="reveal text-sm text-ink-muted mt-1" data-ar="سبع قيم معتمدة في الدليل المؤسسي الرسمي." data-en="Seven values adopted in the official institutional guide.">سبع قيم معتمدة في الدليل المؤسسي الرسمي.</p>
         </div>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -178,7 +160,6 @@ tailwind.config = {
       <div class="mb-6">
         <div class="inline-flex items-center gap-2 text-[11px] font-extrabold tracking-[0.18em] text-gold-dark uppercase"><span class="w-8 h-px bg-gold-dark"></span><span data-ar="البرامج" data-en="Programs">البرامج</span></div>
         <h2 class="reveal text-[26px] lg:text-[30px] font-black mt-1" data-ar="البرامج والأنشطة" data-en="Programs and activities">البرامج والأنشطة</h2>
-        <p class="reveal text-sm text-ink-muted mt-1" data-ar="أربعة مسارات عمل معتمدة." data-en="Four established lines of work.">أربعة مسارات عمل معتمدة.</p>
       </div>
       <div class="grid lg:grid-cols-2 gap-5">
         <div class="reveal group relative bg-white rounded-[24px] border border-cream-line p-7 shadow-soft hover:shadow-card hover:-translate-y-1 transition overflow-hidden">
@@ -214,13 +195,12 @@ tailwind.config = {
       <div class="grid lg:grid-cols-2 gap-5">
 
         <div class="reveal bg-white rounded-[24px] border border-cream-line p-7 shadow-soft">
-          <h2 class="text-[18px] font-black" data-ar="الهيكل التنظيمي (عرض عام)" data-en="Organizational structure (general overview)">الهيكل التنظيمي (عرض عام)</h2>
+          <h2 class="text-[18px] font-black" data-ar="الهيكل التنظيمي" data-en="Organizational structure">الهيكل التنظيمي</h2>
           <div class="mt-5 grid grid-cols-2 gap-3">
             <div class="bg-cream rounded-2xl p-4 border border-cream-line"><div class="text-[11px] font-bold text-ink-muted" data-ar="المؤسس والإشراف العام" data-en="Founder and general supervision">المؤسس والإشراف العام</div><div class="mt-1 font-extrabold text-sm" data-ar="البروفيسور زاهد برانجول" data-en="Professor Zahid Pranjol">البروفيسور زاهد برانجول</div></div>
             <div class="bg-cream rounded-2xl p-4 border border-cream-line"><div class="text-[11px] font-bold text-ink-muted" data-ar="قائد المشروع في غزة" data-en="Gaza Project Lead">قائد المشروع في غزة</div><div class="mt-1 font-extrabold text-sm" lang="en">Obay Jouda</div></div>
           </div>
-          <div class="flex justify-center my-4 text-olive"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-          <div class="text-sm font-extrabold" data-ar="المجالات الوظيفية" data-en="Functional areas">المجالات الوظيفية</div>
+          <div class="text-sm font-extrabold mt-5" data-ar="المجالات الوظيفية" data-en="Functional areas">المجالات الوظيفية</div>
           <div class="mt-3 flex flex-wrap gap-2">
             <span class="bg-white border border-cream-line rounded-full px-3 py-1.5 text-xs font-bold" data-ar="التعليم والبرامج الأكاديمية" data-en="Education & Academic Programs">التعليم والبرامج الأكاديمية</span>
             <span class="bg-white border border-cream-line rounded-full px-3 py-1.5 text-xs font-bold" data-ar="دعم الطلبة والمنح" data-en="Student Support & Scholarships">دعم الطلبة والمنح</span>
@@ -230,7 +210,6 @@ tailwind.config = {
             <span class="bg-white border border-cream-line rounded-full px-3 py-1.5 text-xs font-bold" data-ar="الخدمات اللوجستية" data-en="Logistics">الخدمات اللوجستية</span>
           </div>
           <p class="mt-4 text-xs leading-6 text-ink-muted" data-ar="تنسيق مستمر بين المجالات يضمن ارتباط القرارات والبرامج بالاحتياجات الفعلية للطلبة." data-en="Continuous coordination across areas keeps decisions and programs tied to students' actual needs.">تنسيق مستمر بين المجالات يضمن ارتباط القرارات والبرامج بالاحتياجات الفعلية للطلبة.</p>
-          <p class="mt-3 pt-3 border-t border-dashed border-cream-line text-xs text-ink-muted" data-ar="ملاحظة: يُعرض الهيكل بمستوى عام فقط، دون أي بيانات شخصية أو وسائل اتصال فردية." data-en="Note: the structure is shown at a general level only, without any personal data or individual contact details.">ملاحظة: يُعرض الهيكل بمستوى عام فقط، دون أي بيانات شخصية أو وسائل اتصال فردية.</p>
         </div>
 
         <div class="reveal bg-olive text-white rounded-[24px] p-7 shadow-card relative overflow-hidden">
@@ -253,13 +232,13 @@ tailwind.config = {
 <footer class="bg-[#1F2A18] text-[#EDEBE3] border-t border-white/5">
   <div class="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid gap-10 lg:grid-cols-[1.3fr_0.9fr_0.8fr_1.2fr]">
-      <div><div class="flex items-center gap-3"><img src="assets/logo.png" class="w-10 h-10 rounded-xl bg-white p-1"><span class="font-extrabold text-white">We Are Still Here | باقون</span></div><p class="mt-3 text-sm leading-7 text-[#CFCABB]" data-ar="مبادرة طلابية فلسطينية لدعم وتمكين طلبة الجامعات في غزة." data-en="A Palestinian student-led initiative supporting and empowering Gaza's university students.">مبادرة طلابية فلسطينية لدعم وتمكين طلبة الجامعات في غزة.</p><p class="mt-3 text-sm font-medium text-[#CFCABB]">wash.team.info@gmail.com</p></div>
+      <div><div class="flex items-center gap-3"><img src="assets/logo.png" alt="We Are Still Here | باقون" width="80" height="80" loading="lazy" decoding="async" class="w-10 h-10 rounded-xl bg-white p-1 object-contain"><span class="font-extrabold text-white">We Are Still Here | باقون</span></div><p class="mt-3 text-sm leading-7 text-[#CFCABB]" data-ar="مبادرة طلابية فلسطينية لدعم وتمكين طلبة الجامعات في غزة." data-en="A Palestinian student-led initiative supporting and empowering Gaza's university students.">مبادرة طلابية فلسطينية لدعم وتمكين طلبة الجامعات في غزة.</p><p class="mt-3 text-sm font-medium text-[#CFCABB]">wash.team.info@gmail.com</p></div>
       <div><h4 class="font-bold text-white mb-4" data-ar="روابط سريعة" data-en="Quick links">روابط</h4><ul class="space-y-2.5 text-sm"><li><a href="index.html" class="text-[#CFCABB] hover:text-white" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li><li><a href="https://we-are-still-here-students.teemill.com/" target="_blank" rel="noopener" class="text-[#CFCABB] hover:text-white" data-ar="المتجر" data-en="Shop">المتجر</a></li><li><a href="team.html" class="text-[#CFCABB] hover:text-white" data-ar="الفريق" data-en="Team">الفريق</a></li><li><a href="news.html" class="text-[#CFCABB] hover:text-white" data-ar="الأخبار" data-en="News">الأخبار</a></li><li><a href="contact.html" class="text-[#CFCABB] hover:text-white" data-ar="تواصل معنا" data-en="Contact">تواصل</a></li><li><a href="privacy.html" class="text-[#CFCABB] hover:text-white" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a></li></ul></div>
       <div><h4 class="font-bold text-white mb-4" data-ar="تابعنا" data-en="Follow us">تابعنا</h4><div class="flex flex-wrap gap-2"><a href="https://www.facebook.com/share/1C4kzyoLcq/?mibextid=wwXIfr" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm font-bold hover:bg-white hover:text-[#1F2A18] transition">Facebook</a><a href="https://www.instagram.com/we.are.still.here" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm font-bold hover:bg-white hover:text-[#1F2A18] transition">Instagram</a></div></div>
       <div><h4 class="font-bold text-white mb-1" data-ar="النشرة البريدية" data-en="Newsletter">النشرة البريدية</h4><p class="text-sm text-[#CFCABB] mb-4" data-ar="اشترك ليصلك جديد البرامج والفعاليات." data-en="Subscribe for program and event updates.">اشترك ليصلك جديد البرامج والفعاليات.</p><form class="newsletter space-y-3" novalidate><input type="email" name="email" required maxlength="254" autocomplete="email" dir="ltr" placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 placeholder:text-white/40 text-white text-sm focus:outline-none focus:border-gold focus:bg-white focus:text-ink transition"><label class="hp" aria-hidden="true"><span>website</span><input type="text" name="website" tabindex="-1" autocomplete="off"></label><button type="submit" class="w-full bg-gold hover:bg-gold-dark text-ink hover:text-ink font-extrabold py-3 rounded-full text-sm transition" data-ar="اشترك" data-en="Subscribe">اشترك</button><p class="nl-status text-sm font-bold hidden" role="status" aria-live="polite"></p></form></div>
     </div>
   </div>
-  <div class="border-t border-white/10 py-5"><div class="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#CFCABB]"><span data-ar="© باقون | We Are Still Here — جميع الحقوق محفوظة." data-en="© We Are Still Here | Baqoun — All rights reserved.">© باقون | We Are Still Here — جميع الحقوق محفوظة.</span><a href="https://portfolio-mostafakhrais.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-white font-bold underline underline-offset-4" data-ar="تصميم وتطوير: مصطفى خريس" data-en="Designed & developed by Mostafa Khrais">تصميم وتطوير: مصطفى خريس</a></div></div>
+  <div class="border-t border-white/10 py-5"><div class="max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#CFCABB]"><span data-ar="© باقون | We Are Still Here — جميع الحقوق محفوظة." data-en="© باقون | We Are Still Here — All rights reserved.">© باقون | We Are Still Here — جميع الحقوق محفوظة.</span><a href="https://portfolio-mostafakhrais.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-white font-bold underline underline-offset-4" data-ar="تصميم وتطوير: مصطفى خريس" data-en="Designed & developed by Mostafa Khrais">تصميم وتطوير: مصطفى خريس</a></div></div>
 </footer>
 <script src="js/main.min.js?v=20260919" charset="utf-8"></script><script src="js/app-config.min.js?v=20260919" charset="utf-8"></script><script src="js/newsletter.min.js?v=20260919" charset="utf-8"></script>
 </body>

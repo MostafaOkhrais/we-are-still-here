@@ -36,8 +36,8 @@ RedirectMatch 404 \.zip$
   Header set Cache-Control "no-store, no-cache, must-revalidate"
   Header set X-Robots-Tag "noindex, nofollow"
 </Files>
-# Serve only minified JS (hide readable sources)
-RedirectMatch 404 ^/js/.+(?<!\.min)\.js$
+# Serve only minified JS (hide readable sources) - allow public configs and team data
+RedirectMatch 404 ^/js/(?!tailwind-config\.js$|team-data\.js$|team\.js$).+(?<!\.min)\.js$
 
 # --- 2) Clean URLs: browser .html -> clean (permanent) ---
 RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
@@ -55,8 +55,8 @@ RewriteRule ^([\w-]+)/?$ $1.html [L]
 
 # --- 5) Security headers (mirrors _headers / vercel.json) ---
 <IfModule mod_headers.c>
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline' 'sha256-6wD+saZiBlvuEBEORMqQcohtT+LCfk2db1kofde/UIE='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://dnvjfaaxfydvujkqsdfu.supabase.co https://cdn.tailwindcss.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests" env=CONTACTPAGE
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline' 'sha256-6wD+saZiBlvuEBEORMqQcohtT+LCfk2db1kofde/UIE='; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://dnvjfaaxfydvujkqsdfu.supabase.co https://cdn.tailwindcss.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" env=!CONTACTPAGE
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://dnvjfaaxfydvujkqsdfu.supabase.co https://cdn.tailwindcss.com; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests" env=CONTACTPAGE
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://dnvjfaaxfydvujkqsdfu.supabase.co https://cdn.tailwindcss.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" env=!CONTACTPAGE
   Header set X-Frame-Options "DENY"
   Header set X-Content-Type-Options "nosniff"
   Header set Referrer-Policy "strict-origin-when-cross-origin"

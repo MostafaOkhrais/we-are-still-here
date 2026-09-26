@@ -18,9 +18,7 @@ function corsHeaders(req: Request): Record<string, string> {
   const origin = req.headers.get("origin") ?? "";
   const allow = configured.length === 0
     ? "null"
-    : configured.includes("*")
-      ? "*"
-      : (configured.includes(origin) ? origin : (configured[0] ?? "null"));
+    : (configured.includes(origin) ? origin : "null");
   return {
     "Access-Control-Allow-Origin": allow,
     "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
