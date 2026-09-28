@@ -16,7 +16,7 @@
     var status = document.getElementById('contact-status');
     var fallback = document.getElementById('contact-fallback');
     var hp = form.querySelector('input[name="website"]');
-    var btnLabel = btn ? btn.textContent : '';
+    function btnLabel(){ if(!btn) return ''; return document.documentElement.lang === 'en' ? (btn.getAttribute('data-en') || btn.textContent) : (btn.getAttribute('data-ar') || btn.textContent); }
 
     form.addEventListener('submit', function(e){
       if(e.defaultPrevented) return;
@@ -31,7 +31,7 @@
       function done(cls, msg, showFallback){
         if(status){ status.hidden = false; status.className = 'form-status ' + cls; status.textContent = msg; }
         if(fallback) fallback.hidden = !showFallback;
-        if(btn){ btn.disabled = false; btn.removeAttribute('aria-disabled'); btn.textContent = btnLabel; }
+        if(btn){ btn.disabled = false; btn.removeAttribute('aria-disabled'); btn.textContent = btnLabel(); }
       }
       window.WASH_BACKEND.req(window.WASH_BACKEND.contactFn, {
         method: 'POST',

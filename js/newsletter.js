@@ -18,7 +18,7 @@
       var status = form.querySelector('.nl-status');
       var hp = form.querySelector('input[name="website"]');
       if(!input || !btn || !status) return;
-      var btnLabel = btn.textContent;
+      function btnLabel(){ return document.documentElement.lang === 'en' ? (btn.getAttribute('data-en') || btn.textContent) : (btn.getAttribute('data-ar') || btn.textContent); }
       form.addEventListener('submit', function(e){
         e.preventDefault();
         var email = input.value.trim();
@@ -42,10 +42,10 @@
           }
           else if(x.b && x.b.error === 'rate_limited'){ status.textContent = t('rate'); }
           else { status.textContent = t('fail'); }
-          btn.disabled = false; btn.removeAttribute('aria-disabled'); btn.textContent = btnLabel;
+          btn.disabled = false; btn.removeAttribute('aria-disabled'); btn.textContent = btnLabel();
         }).catch(function(){
           status.hidden = false; status.textContent = t('fail');
-          btn.disabled = false; btn.removeAttribute('aria-disabled'); btn.textContent = btnLabel;
+          btn.disabled = false; btn.removeAttribute('aria-disabled'); btn.textContent = btnLabel();
         });
       });
       input.addEventListener('input', function(){

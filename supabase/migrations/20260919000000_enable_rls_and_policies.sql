@@ -56,11 +56,23 @@ CREATE POLICY "admin_allowlist_select" ON admin_allowlist
   );
 
 -- 6. Add CHECK constraints for data integrity (F-LOW-06)
-ALTER TABLE news_posts ADD CONSTRAINT IF NOT EXISTS title_ar_len CHECK (char_length(title_ar) BETWEEN 5 AND 200);
-ALTER TABLE news_posts ADD CONSTRAINT IF NOT EXISTS title_en_len CHECK (char_length(title_en) BETWEEN 5 AND 200);
-ALTER TABLE news_posts ADD CONSTRAINT IF NOT EXISTS cat_check CHECK (category IN ('news','update','event'));
-ALTER TABLE news_posts ADD CONSTRAINT IF NOT EXISTS body_ar_len CHECK (char_length(body_ar) > 0 AND char_length(body_ar) <= 20000);
-ALTER TABLE news_posts ADD CONSTRAINT IF NOT EXISTS body_en_len CHECK (char_length(body_en) > 0 AND char_length(body_en) <= 20000);
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'title_ar_len') THEN
+    ALTER TABLE news_posts ADD CONSTRAINT title_ar_len CHECK (char_length(title_ar) BETWEEN 5 AND 200);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'title_en_len') THEN
+    ALTER TABLE news_posts ADD CONSTRAINT title_en_len CHECK (char_length(title_en) BETWEEN 5 AND 200);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'cat_check') THEN
+    ALTER TABLE news_posts ADD CONSTRAINT cat_check CHECK (category IN ('news','update','event'));
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'body_ar_len') THEN
+    ALTER TABLE news_posts ADD CONSTRAINT body_ar_len CHECK (char_length(body_ar) > 0 AND char_length(body_ar) <= 20000);
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'body_en_len') THEN
+    ALTER TABLE news_posts ADD CONSTRAINT body_en_len CHECK (char_length(body_en) > 0 AND char_length(body_en) <= 20000);
+  END IF;
+END $$;
 
 -- 7. Ensure authenticated role can read its own JWT email (for allowlist check)
 -- (No additional policy needed for anon)

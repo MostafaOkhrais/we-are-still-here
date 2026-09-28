@@ -16,15 +16,15 @@ function corsHeaders(req: Request): Record<string, string> {
   const raw = Deno.env.get("ALLOWED_ORIGINS") ?? "";
   const configured = raw.split(",").map((s) => s.trim()).filter(Boolean);
   const origin = req.headers.get("origin") ?? "";
-  const allow = configured.length === 0
-    ? "null"
-    : (configured.includes(origin) ? origin : "null");
-  return {
-    "Access-Control-Allow-Origin": allow,
+  const headers: Record<string, string> = {
     "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Vary": "Origin",
   };
+  if (origin !== "" && configured.includes(origin)) {
+    headers["Access-Control-Allow-Origin"] = origin;
+  }
+  return headers;
 }
 
 function json(data: unknown, status: number, req: Request): Response {

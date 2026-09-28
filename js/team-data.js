@@ -10,7 +10,7 @@ window.WASH_TEAM = {
         { photo: "assets/zahid-pranjol.jpg", nameAr: "زاهد برانجول", nameEn: "Professor Zahid Pranjol", roleAr: "المؤسس والمدير", roleEn: "Founder and Director", alt: "Professor Zahid Pranjol" },
         { photo: "assets/obay-jouda.jpg", nameAr: "أُبي جودة", nameEn: "Obay Jouda", roleAr: "قائد المشروع في غزة", roleEn: "Gaza Project Lead", alt: "Obay Jouda" },
         { photo: "assets/saad-muhana.jpg", nameAr: "سعد مهنا", nameEn: "Saad Muhana", roleAr: "عضو أول", roleEn: "Senior Member", alt: "Saad Muhana" },
-        { photo: "assets/hada-mohammed.jpg", nameAr: "هدى محمد", nameEn: "Hada Mohammed", roleAr: "عضو أول", roleEn: "Senior Member", alt: "Hada Mohammed" }
+        { photo: "assets/hada-mohammed.jpg", nameAr: "هدى محمد", nameEn: "Hada Mohammed", roleAr: "عضوة أولى", roleEn: "Senior Member", alt: "Hada Mohammed" }
       ]
     },
     {
@@ -21,7 +21,7 @@ window.WASH_TEAM = {
       titleEn: "Creative Media & Design",
       members: [
         { photo: "assets/mostafa-khrais.jpg", nameAr: "مصطفى خريس", nameEn: "Mostafa Khrais", roleAr: "تكنولوجيا المعلومات وتطوير الويب", roleEn: "IT & Web Development", alt: "Mostafa Khrais" },
-        { photo: "assets/saeed-abu-hjajj.jpg", nameAr: "سعيد أبو حجاج", nameEn: "Saeed Abu Hjajj", roleAr: "مونتاج الفيديو", roleEn: "Video Editing", alt: "Saeed Abu Hjajj" },
+        { photo: "assets/saeed-abu-hjajj.jpg", nameAr: "سعيد أبو حجاج", nameEn: "Saeed Abu Hjajj", roleAr: "تحرير الفيديو", roleEn: "Video Editing", alt: "Saeed Abu Hjajj" },
         { photo: "assets/roba-atallah.jpg", nameAr: "ربى عطا الله", nameEn: "Roba Atallah", roleAr: "التصميم", roleEn: "Design", alt: "Roba Atallah" },
         { photo: "assets/mayar-al-bairouti.jpg", nameAr: "ميار البيروتي", nameEn: "Mayar Al-Bairouti", roleAr: "تصوير الفيديو", roleEn: "Videography", alt: "Mayar Al-Bairouti" }
       ]
@@ -57,7 +57,7 @@ window.WASH_TEAM = {
       num: "5",
       badge: "bg-olive text-white",
       titleAr: "البرامج المجتمعية والعمليات",
-      titleEn: "Community Programmes & Operations",
+      titleEn: "Community Programs & Operations",
       members: [
         { photo: "assets/jood-sabea.jpg", nameAr: "جود سبع", nameEn: "Jood Sabea", roleAr: "منسق عام", roleEn: "General Coordinator", alt: "Jood Sabea" },
         { photo: "assets/ahmed-albardweel.jpg", nameAr: "أحمد البردويل", nameEn: "Ahmed Albardweel", roleAr: "الخدمات اللوجستية", roleEn: "Logistics", alt: "Ahmed Albardweel" },

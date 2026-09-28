@@ -1,10 +1,12 @@
 (function(){
   document.documentElement.classList.add('js-enabled');
   var KEY='wash-lang';
-  function current(){ try{var q=null; try{q=new URLSearchParams(window.location.search).get('lang');}catch(e){} if(q==='ar'||q==='en'){try{localStorage.setItem(KEY,q);}catch(e){} return q;} return localStorage.getItem(KEY)||'ar';}catch(e){return 'ar';} }
+  function current(){ try{var q=null; try{q=new URLSearchParams(window.location.search).get('lang');}catch(e){} if(q==='ar'||q==='en'){try{localStorage.setItem(KEY,q);}catch(e){} return q;} return localStorage.getItem(KEY)||'en';}catch(e){return 'en';} }
   function apply(lang){
     document.documentElement.lang = lang==='ar'?'ar':'en';
     document.documentElement.dir = lang==='ar'?'rtl':'ltr';
+    try{var ta=document.documentElement.getAttribute('data-title-ar'),te=document.documentElement.getAttribute('data-title-en'); if(ta&&te){document.title = lang==='ar'?ta:te;}}catch(e){}
+    if(typeof window.WASH_shopRender === 'function' && document.getElementById('shop-grid')){ try{window.WASH_shopRender();}catch(e){} }
     document.querySelectorAll('[data-ar]').forEach(function(el){
       var v = lang==='ar'?el.getAttribute('data-ar'):el.getAttribute('data-en');
       if(v!=null) el.textContent = v;
@@ -31,10 +33,7 @@
     var menu=document.querySelector('.menu-btn');
     var links=document.querySelector('.nav-links') || document.getElementById('main-nav-mobile') || document.getElementById('main-nav');
     if(menu&&links){
-      var isOpen = links.classList.contains('open') || !links.classList.contains('hidden');
-
-      var isMobileHidden = links.classList.contains('hidden');
-      var open = links.id === 'main-nav-mobile' ? !isMobileHidden : links.classList.contains('open');
+      var open = links.id === 'main-nav-mobile' ? !links.classList.contains('hidden') : links.classList.contains('open');
       menu.setAttribute('aria-label',open?(lang==='ar'?'\u0625\u063a\u0644\u0627\u0642 \u0627\u0644\u0642\u0627\u0626\u0645\u0629':'Close menu'):(lang==='ar'?'\u0641\u062a\u062d \u0627\u0644\u0642\u0627\u0626\u0645\u0629':'Open menu'));
     }
     try{localStorage.setItem(KEY,lang);}catch(e){}

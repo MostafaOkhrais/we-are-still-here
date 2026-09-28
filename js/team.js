@@ -16,12 +16,12 @@
     var wrap = el('div', 'aspect-[3/4] overflow-hidden relative');
     var img = document.createElement('img');
     img.setAttribute('src', m.photo);
-    img.setAttribute('srcset', m.photo + ' 900w, ' + m.photo + ' 600w, ' + m.photo + ' 300w');
-    img.setAttribute('sizes', '(min-width:1024px) 250px, (min-width:640px) 50vw, 100vw');
     img.setAttribute('width', '900');
     img.setAttribute('height', '1200');
     img.setAttribute('loading', 'lazy');
-    img.setAttribute('alt', m.alt || '');
+    img.setAttribute('data-ar-alt', m.nameAr);
+    img.setAttribute('data-en-alt', (m.alt && m.alt !== '') ? m.alt : m.nameEn);
+    img.setAttribute('alt', m.nameAr);
     img.className = 'w-full h-full object-cover group-hover:scale-105 transition duration-500';
     var shade = el('div', 'absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/50 to-transparent');
     var body = el('div', 'p-5');
